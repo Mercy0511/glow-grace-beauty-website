@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Skincare Ritual (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9e7dc"/><stop offset="1" stop-color="#c9968a"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#p)"/><circle cx="185" cy="204" r="95" fill="#fff" opacity="0.15"/><circle cx="426" cy="526" r="82" fill="#fff" opacity="0.22"/><circle cx="758" cy="223" r="49" fill="#fff" opacity="0.22"/><circle cx="468" cy="27" r="108" fill="#fff" opacity="0.1"/><circle cx="419" cy="351" r="90" fill="#fff" opacity="0.15"/><circle cx="705" cy="336" r="81" fill="#fff" opacity="0.15"/><circle cx="525" cy="237" r="114" fill="#fff" opacity="0.22"/><circle cx="35" cy="574" r="63" fill="#fff" opacity="0.22"/>
+<rect x="22" y="22" width="756" height="556" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="294.0" r="146.88000000000002" fill="#fff" opacity=".16"/>
+<g transform="translate(298.0,192.0) scale(2.0400000000000005)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 78 C16 42 44 20 82 20 C84 56 60 84 18 78z"/><path d="M18 78 C38 58 54 44 70 34"/></g>
+<text x="400.0" y="468.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">SKINCARE RITUAL</text>
+<text x="400.0" y="502.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>

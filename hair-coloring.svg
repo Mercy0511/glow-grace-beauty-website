@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Hair Coloring (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d9cf"/><stop offset="1" stop-color="#b76e79"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#p)"/><circle cx="159" cy="262" r="48" fill="#fff" opacity="0.15"/><circle cx="549" cy="403" r="48" fill="#fff" opacity="0.15"/><circle cx="277" cy="412" r="113" fill="#fff" opacity="0.15"/><circle cx="399" cy="476" r="113" fill="#fff" opacity="0.22"/><circle cx="519" cy="499" r="67" fill="#fff" opacity="0.1"/><circle cx="696" cy="325" r="104" fill="#fff" opacity="0.15"/><circle cx="641" cy="24" r="114" fill="#fff" opacity="0.1"/><circle cx="603" cy="20" r="130" fill="#fff" opacity="0.22"/>
+<rect x="22" y="22" width="756" height="556" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="294.0" r="146.88000000000002" fill="#fff" opacity=".16"/>
+<g transform="translate(298.0,192.0) scale(2.0400000000000005)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14 C66 40 78 52 78 66 a28 28 0 0 1 -56 0 C22 52 34 40 50 14z"/><path d="M38 68 a12 12 0 0 0 12 12" /></g>
+<text x="400.0" y="468.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">HAIR COLORING</text>
+<text x="400.0" y="502.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>

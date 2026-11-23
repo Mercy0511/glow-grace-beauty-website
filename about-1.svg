@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Our Studio (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e3d3"/><stop offset="1" stop-color="#d9a79c"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="1000" fill="url(#g)"/><rect width="800" height="1000" fill="url(#p)"/><circle cx="507" cy="749" r="142" fill="#fff" opacity="0.15"/><circle cx="390" cy="725" r="68" fill="#fff" opacity="0.1"/><circle cx="577" cy="162" r="125" fill="#fff" opacity="0.22"/><circle cx="373" cy="747" r="113" fill="#fff" opacity="0.22"/><circle cx="453" cy="136" r="137" fill="#fff" opacity="0.1"/><circle cx="146" cy="524" r="102" fill="#fff" opacity="0.1"/><circle cx="51" cy="52" r="149" fill="#fff" opacity="0.1"/><circle cx="80" cy="212" r="135" fill="#fff" opacity="0.22"/>
+<rect x="22" y="22" width="756" height="956" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="456.0" r="195.84" fill="#fff" opacity=".16"/>
+<g transform="translate(264.0,320.0) scale(2.72)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="42" rx="26" ry="32"/><path d="M50 74 V90 M36 90 H64"/><path d="M38 30 q6 -8 14 -8"/></g>
+<text x="400.0" y="712.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">OUR STUDIO</text>
+<text x="400.0" y="746.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>

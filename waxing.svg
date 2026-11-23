@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Waxing (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9e4dd"/><stop offset="1" stop-color="#d09a8f"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#p)"/><circle cx="71" cy="72" r="68" fill="#fff" opacity="0.1"/><circle cx="100" cy="390" r="99" fill="#fff" opacity="0.22"/><circle cx="750" cy="516" r="44" fill="#fff" opacity="0.15"/><circle cx="311" cy="344" r="54" fill="#fff" opacity="0.22"/><circle cx="715" cy="454" r="42" fill="#fff" opacity="0.1"/><circle cx="86" cy="513" r="112" fill="#fff" opacity="0.15"/><circle cx="31" cy="150" r="112" fill="#fff" opacity="0.15"/><circle cx="699" cy="232" r="50" fill="#fff" opacity="0.22"/>
+<rect x="22" y="22" width="756" height="556" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="294.0" r="146.88000000000002" fill="#fff" opacity=".16"/>
+<g transform="translate(298.0,192.0) scale(2.0400000000000005)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 36 q12 -14 24 0 t24 0 t24 0"/><path d="M14 52 q12 -14 24 0 t24 0 t24 0"/><path d="M14 68 q12 -14 24 0 t24 0 t24 0"/></g>
+<text x="400.0" y="468.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">WAXING</text>
+<text x="400.0" y="502.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>

@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: change these for every new client -->
+  <title>Glow & Grace Beauty Studio | Luxury Salon, Bridal Makeup & Skincare</title>
+  <meta name="description" content="Glow & Grace Beauty Studio offers hair styling, bridal makeup, facials, skincare, manicure, pedicure and more. Experience luxury, care and confidence. Book your appointment today.">
+  <meta name="theme-color" content="#b76e79">
+  <meta property="og:title" content="Glow & Grace Beauty Studio">
+  <meta property="og:description" content="Experience luxury, care and confidence at our beauty studio.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzAiIGZpbGw9IiNiNzZlNzkiLz48dGV4dCB4PSIzMiIgeT0iNDMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjMwIiBmaWxsPSIjZmZmIj5HPC90ZXh0Pjwvc3ZnPg==" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* =========================================================
+   Glow & Grace Beauty Studio - style.css
+   ---------------------------------------------------------
+   1. Design tokens (COLORS & FONTS: edit here to re-theme)
+   2. Base & utilities
+   3. Buttons
+   4. Header / navigation
+   5. Hero
+   6. Sections (about, services, packages, gallery, ...)
+   7. Booking form, contact, footer
+   8. Animations
+   9. Responsive rules
+   ========================================================= */
+
+/* ---------- 1. DESIGN TOKENS ---------- */
+:root {
+  --blush: #f8dfe0;
+  --blush-soft: #fcefef;
+  --rose-gold: #b76e79;
+  --rose-gold-dark: #9a5560;
+  --rose-gold-light: #d9a79c;
+  --cream: #fffaf5;
+  --beige: #f3e6d8;
+  --brown: #4a3028;
+  --brown-soft: #7a5f55;
+  --white: #ffffff;
+  --whatsapp: #1fa855;
+
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius: 18px;
+  --shadow-sm: 0 4px 14px rgba(74, 48, 40, .08);
+  --shadow-md: 0 14px 34px rgba(74, 48, 40, .13);
+  --header-h: 76px;
+  --transition: .35s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ---------- 2. BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--brown);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.15; margin: 0 0 .5em; font-weight: 600; }
+p { margin: 0 0 1em; }
+em { font-style: italic; color: var(--rose-gold); }
+button { font-family: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--rose-gold); outline-offset: 3px; }
+
+.container { width: min(1180px, 92%); margin-inline: auto; }
+.section { padding: 100px 0; }
+.skip-link {
+  position: absolute; left: -999px; top: 8px; background: var(--brown); color: #fff;
+  padding: 10px 16px; border-radius: 8px; z-index: 2000;
+}
+.skip-link:focus { left: 8px; }
+
+.eyebrow {
+  text-transform: uppercase; letter-spacing: .28em; font-size: .78rem;
+  color: var(--rose-gold); font-weight: 500; margin-bottom: 14px;
+}
+.section-title { font-size: clamp(2.1rem, 4.5vw, 3.2rem); }
+.section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+.section-sub { color: var(--brown-soft); }
+.demo-note {
+  display: inline-block; font-size: .82rem; color: var(--rose-gold-dark);
+  background: var(--blush-soft); border: 1px dashed var(--rose-gold-light);
+  padding: 6px 16px; border-radius: 999px; margin-top: 6px;
+}
+
+/* ---------- 3. BUTTONS ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 30px; border-radius: 999px; border: 2px solid transparent;
+  font-size: .92rem; font-weight: 500; letter-spacing: .03em;
+  transition: var(--transition); text-align: center;
+}
+.btn-primary { background: linear-gradient(135deg, var(--rose-gold), var(--rose-gold-light)); color: #fff; box-shadow: 0 8px 22px rgba(183, 110, 121, .35); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(183, 110, 121, .45); }
+.btn-outline { border-color: var(--rose-gold); color: var(--rose-gold-dark); background: transparent; }
+.btn-outline:hover { background: var(--rose-gold); color: #fff; transform: translateY(-3px); }
+.btn-outline-light { border-color: rgba(255, 255, 255, .85); color: #fff; }
+.btn-outline-light:hover { background: #fff; color: var(--rose-gold-dark); transform: translateY(-3px); }
+.btn-whatsapp { background: var(--whatsapp); color: #fff; }
+.btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(31, 168, 85, .35); }
+.btn-block { width: 100%; }
+.link-btn {
+  background: none; border: 0; color: var(--rose-gold-dark); font-weight: 500; font-size: .9rem;
+  padding: 4px 0; border-bottom: 1.5px solid var(--rose-gold-light); transition: var(--transition);
+}
+.link-btn:hover { color: var(--rose-gold); border-color: var(--rose-gold); }
+
+/* ---------- 4. HEADER ---------- */
+.header {
+  position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 1000;
+  display: flex; align-items: center; transition: var(--transition);
+}
+.header.scrolled { background: rgba(255, 250, 245, .94); backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); }
+.nav { display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 10px; color: var(--rose-gold-dark); }
+.logo-mark { width: 40px; height: 40px; }
+.logo-text { display: flex; flex-direction: column; font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; line-height: 1; color: var(--brown); }
+.logo-text small { font-family: var(--font-body); font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; font-weight: 500; color: var(--rose-gold); margin-top: 4px; }
+.logo-light { color: var(--rose-gold-light); }
+.logo-light .logo-text { color: #fff; }
+.logo-light .logo-text small { color: var(--rose-gold-light); }
+/* Over the hero (before scrolling) the header text is light */
+.header:not(.scrolled) .logo-text, .header:not(.scrolled) .nav-link { color: #fff; }
+.header:not(.scrolled) .logo { color: #fff; }
+.header:not(.scrolled) .logo-text small { color: var(--blush); }
+
+.nav-menu { display: flex; align-items: center; gap: 30px; }
+.nav-link { position: relative; font-size: .92rem; font-weight: 500; padding: 6px 0; transition: var(--transition); }
+.nav-link::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--rose-gold); transition: var(--transition); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link.active { color: var(--rose-gold); }
+.header:not(.scrolled) .nav-link.active { color: var(--blush); }
+.nav-cta { padding: 11px 24px; color: #fff !important; }
+
+.nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; padding: 10px; flex-direction: column; justify-content: center; gap: 6px; }
+.nav-toggle span { display: block; height: 2px; background: var(--brown); border-radius: 2px; transition: var(--transition); }
+.header:not(.scrolled) .nav-toggle span { background: #fff; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---------- 5. HERO ---------- */
+.hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; overflow: hidden; color: #fff; padding: calc(var(--header-h) + 40px) 0 90px; }
+.hero-bg { position: absolute; inset: 0; background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlOWI5YmIiLz48c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iI2M5OGY4NiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2E0NWY2YSIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMzQiIGhlaWdodD0iMzQiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMzQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4wOCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI3ApIi8+PGNpcmNsZSBjeD0iMTIzNyIgY3k9IjI2MSIgcj0iMjY5IiBmaWxsPSIjZjNkOWE4IiBvcGFjaXR5PSIwLjE0Ii8+PGNpcmNsZSBjeD0iMTU2NSIgY3k9Ijg2MSIgcj0iMjY5IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE0Ii8+PGNpcmNsZSBjeD0iNjI5IiBjeT0iODYwIiByPSIxOTkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTQiLz48Y2lyY2xlIGN4PSI2NTMiIGN5PSI5MjIiIHI9IjEyMCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMTA4MCIgY3k9Ijg4OSIgcj0iMTQzIiBmaWxsPSIjZjNkOWE4IiBvcGFjaXR5PSIwLjE0Ii8+PGNpcmNsZSBjeD0iNzA0IiBjeT0iNTg3IiByPSIxNDMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTQiLz48Y2lyY2xlIGN4PSI4MjEiIGN5PSI0MTciIHI9IjE1MSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNzYzIiBjeT0iNzgwIiByPSI5OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNCIvPjxjaXJjbGUgY3g9IjEyMzIiIGN5PSI0NTUiIHI9IjExMiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4wNyIvPjxjaXJjbGUgY3g9IjE1OTUiIGN5PSI4OTIiIHI9IjgxIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjA3Ii8+PGNpcmNsZSBjeD0iMTU4MyIgY3k9IjE2OSIgcj0iMTIyIiBmaWxsPSIjZjNkOWE4IiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSIxNTg0IiBjeT0iMjAzIiByPSIyMTgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTQiLz48L3N2Zz4=") center / cover no-repeat, var(--rose-gold-light); animation: slowZoom 22s ease-in-out infinite alternate; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(74, 48, 40, .72) 0%, rgba(74, 48, 40, .4) 55%, rgba(183, 110, 121, .25) 100%); }
+.hero-content { position: relative; }
+.hero-content > * { max-width: 640px; }
+.hero .eyebrow { color: var(--blush); }
+.hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 700; margin-bottom: 14px; }
+.hero h1 em { color: var(--rose-gold-light); }
+.hero-sub { font-family: var(--font-heading); font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-style: italic; color: var(--blush); }
+.hero-text { color: rgba(255, 255, 255, .88); font-weight: 300; max-width: 520px; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.hero-stats { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 48px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, .3); }
+.hero-stats li { display: flex; flex-direction: column; }
+.hero-stats strong { font-family: var(--font-heading); font-size: 1.8rem; color: var(--rose-gold-light); line-height: 1.1; }
+.hero-stats span { font-size: .8rem; letter-spacing: .08em; opacity: .85; }
+.scroll-hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); width: 26px; height: 42px; border: 2px solid rgba(255, 255, 255, .7); border-radius: 20px; }
+.scroll-hint span { position: absolute; top: 8px; left: 50%; width: 4px; height: 8px; margin-left: -2px; background: #fff; border-radius: 4px; animation: scrollDot 1.8s infinite; }
+
+/* Hero two-column layout + visual */
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+.hero-visual { position: relative; justify-self: center; width: min(380px, 100%); }
+.hero-arch { border-radius: 999px 999px 28px 28px; overflow: hidden; border: 6px solid rgba(255, 255, 255, .85); box-shadow: 0 30px 70px rgba(40, 20, 20, .35); aspect-ratio: 4 / 5; background: var(--blush); }
+.hero-arch img { width: 100%; height: 100%; object-fit: cover; }
+.chip { position: absolute; background: rgba(255, 255, 255, .95); color: var(--brown); font-size: .8rem; font-weight: 500; padding: 9px 18px; border-radius: 999px; box-shadow: var(--shadow-md); white-space: nowrap; animation: float 6s ease-in-out infinite; }
+.chip-1 { top: 14%; left: -48px; }
+.chip-2 { top: 52%; right: -40px; animation-delay: -2s; }
+.chip-3 { bottom: 8%; left: -30px; animation-delay: -4s; }
+
+/* ---------- 6. SECTIONS ---------- */
+/* About */
+.about { background: var(--cream); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: center; }
+.about-images { position: relative; padding-bottom: 60px; }
+.about-img-main { width: 82%; border-radius: 200px 200px var(--radius) var(--radius); box-shadow: var(--shadow-md); }
+.about-img-small { position: absolute; right: 0; bottom: 0; width: 48%; border-radius: var(--radius); border: 8px solid var(--cream); box-shadow: var(--shadow-md); }
+.about-badge { position: absolute; top: 40px; right: 6%; background: #fff; border-radius: 50%; width: 118px; height: 118px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: var(--shadow-md); animation: float 5s ease-in-out infinite; }
+.about-badge strong { font-family: var(--font-heading); font-size: 1.3rem; color: var(--rose-gold); }
+.about-badge span { font-size: .68rem; line-height: 1.3; color: var(--brown-soft); padding: 0 10px; }
+.why-title { margin: 26px 0 14px; font-size: 1.6rem; }
+.why-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.why-list li { display: flex; gap: 12px; align-items: flex-start; }
+.why-list p { margin: 0; font-size: .85rem; color: var(--brown-soft); line-height: 1.5; }
+.why-list strong { font-size: .95rem; }
+.why-icon { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--blush); color: var(--rose-gold); display: grid; place-items: center; font-size: .9rem; }
+
+/* Services */
+.services { background: linear-gradient(180deg, var(--beige), var(--cream)); }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 28px; }
+.card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); display: flex; flex-direction: column; }
+.card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+.card-img { overflow: hidden; aspect-ratio: 4 / 3; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+.card:hover .card-img img { transform: scale(1.1); }
+.card-body { padding: 22px 22px 20px; display: flex; flex-direction: column; flex: 1; }
+.card-body h3 { font-size: 1.45rem; margin-bottom: 8px; }
+.card-body p { font-size: .9rem; color: var(--brown-soft); flex: 1; }
+.card-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--beige); }
+.price { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--rose-gold-dark); }
+
+/* Packages */
+.packages { background: var(--cream); }
+.packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 26px; align-items: stretch; }
+.package { position: relative; background: #fff; border: 1px solid var(--beige); border-radius: var(--radius); padding: 38px 28px; text-align: center; transition: var(--transition); display: flex; flex-direction: column; }
+.package:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--rose-gold-light); }
+.package.featured { background: linear-gradient(160deg, var(--rose-gold), var(--rose-gold-dark)); color: #fff; border: 0; transform: scale(1.04); box-shadow: var(--shadow-md); }
+.package.featured:hover { transform: scale(1.04) translateY(-8px); }
+.package.featured .package-desc, .package.featured li { color: rgba(255, 255, 255, .9); }
+.package.featured li::before { color: var(--blush); }
+.package.featured .btn-primary { background: #fff; color: var(--rose-gold-dark); box-shadow: none; }
+.ribbon { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--brown); color: #fff; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; padding: 5px 16px; border-radius: 999px; white-space: nowrap; }
+.package h3 { font-size: 1.55rem; min-height: 2.4em; display: flex; align-items: center; justify-content: center; }
+.package-price { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700; color: var(--rose-gold); margin-bottom: 8px; line-height: 1.1; }
+.package.featured .package-price { color: #fff; }
+.package-desc { font-size: .9rem; color: var(--brown-soft); }
+.package ul { text-align: left; margin: 10px 0 26px; flex: 1; }
+.package li { font-size: .88rem; color: var(--brown-soft); padding: 6px 0 6px 26px; position: relative; border-bottom: 1px dashed rgba(183, 110, 121, .25); }
+.package li::before { content: "✓"; position: absolute; left: 4px; color: var(--rose-gold); font-weight: 600; }
+
+/* Gallery */
+.gallery { background: var(--blush-soft); }
+.gallery-grid { columns: 3; column-gap: 20px; }
+.gallery-item { position: relative; display: block; width: 100%; padding: 0; margin: 0 0 20px; border: 0; border-radius: var(--radius); overflow: hidden; background: var(--beige); break-inside: avoid; box-shadow: var(--shadow-sm); }
+.gallery-item img { width: 100%; height: auto; transition: transform .7s ease; }
+.gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.08); }
+.gallery-cap { position: absolute; inset: auto 0 0 0; padding: 40px 18px 16px; text-align: left; color: #fff; font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; background: linear-gradient(0deg, rgba(74, 48, 40, .8), transparent); transform: translateY(100%); transition: var(--transition); }
+.gallery-item:hover .gallery-cap, .gallery-item:focus-visible .gallery-cap { transform: translateY(0); }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 3000; background: rgba(40, 24, 20, .92); display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 24px; animation: fadeIn .25s ease; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: min(92vw, 1000px); max-height: 78vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
+.lightbox-caption { color: #fff; margin: 16px 0 0; font-family: var(--font-heading); font-size: 1.4rem; }
+.lightbox-close, .lightbox-nav { position: absolute; background: rgba(255, 255, 255, .14); color: #fff; border: 0; border-radius: 50%; width: 48px; height: 48px; font-size: 2rem; line-height: 1; display: grid; place-items: center; transition: var(--transition); }
+.lightbox-close:hover, .lightbox-nav:hover { background: var(--rose-gold); }
+.lightbox-close { top: 20px; right: 20px; }
+.lightbox-nav { top: 50%; transform: translateY(-50%); }
+.lightbox-nav.prev { left: 18px; }
+.lightbox-nav.next { right: 18px; }
+
+/* Testimonials */
+.testimonials { background: var(--cream); }
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px; }
+.testimonial { position: relative; background: #fff; border-radius: var(--radius); padding: 34px 28px 26px; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.testimonial:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.testimonial::before { content: "“"; position: absolute; top: 4px; right: 22px; font-family: var(--font-heading); font-size: 6rem; line-height: 1; color: var(--blush); }
+.sample-tag { display: inline-block; font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; background: var(--beige); color: var(--brown-soft); padding: 3px 12px; border-radius: 999px; margin-bottom: 12px; }
+.stars { color: #d9a441; letter-spacing: 3px; margin-bottom: 10px; }
+.testimonial p { font-style: italic; color: var(--brown-soft); position: relative; }
+.person { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.person small { display: block; color: var(--rose-gold); }
+.avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--rose-gold), var(--rose-gold-light)); color: #fff; display: grid; place-items: center; font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; }
+
+/* ---------- 7. BOOKING, CONTACT, FOOTER ---------- */
+.booking { background: linear-gradient(135deg, var(--blush), var(--beige)); }
+.booking-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: start; }
+.booking-note { background: rgba(255, 255, 255, .65); border-left: 4px solid var(--rose-gold); padding: 14px 18px; border-radius: 0 12px 12px 0; font-size: .9rem; margin: 20px 0 26px; }
+.booking-form { background: #fff; border-radius: 24px; padding: 38px 34px; box-shadow: var(--shadow-md); }
+.field { margin-bottom: 18px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+label { display: block; font-size: .85rem; font-weight: 500; margin-bottom: 6px; }
+.req { color: #c0392b; }
+input, select, textarea {
+  width: 100%; font: inherit; font-size: .95rem; color: var(--brown); background: var(--cream);
+  border: 1.5px solid var(--beige); border-radius: 12px; padding: 12px 14px; transition: var(--transition);
+}
+textarea { resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose-gold); box-shadow: 0 0 0 4px rgba(183, 110, 121, .15); background: #fff; }
+.field.invalid input, .field.invalid select { border-color: #c0392b; background: #fff6f5; }
+.error { color: #c0392b; font-size: .78rem; margin: 5px 0 0; min-height: 0; }
+.error:empty { display: none; }
+.form-status { margin: 14px 0 0; font-size: .88rem; text-align: center; color: var(--brown-soft); }
+.form-status.success { color: #1c7c45; }
+.form-status.fail { color: #c0392b; }
+
+.contact { background: var(--cream); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: stretch; }
+.contact-list li { display: flex; gap: 16px; margin-bottom: 22px; }
+.contact-list strong { display: block; font-family: var(--font-heading); font-size: 1.25rem; }
+.contact-list a:hover { color: var(--rose-gold); }
+.contact-list span:not(.c-icon) { display: block; color: var(--brown-soft); font-size: .93rem; }
+.c-icon { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--blush); color: var(--rose-gold-dark); display: grid; place-items: center; font-size: 1.2rem; }
+.contact-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+.map-box { border-radius: var(--radius); overflow: hidden; min-height: 380px; background: var(--beige); box-shadow: var(--shadow-sm); }
+.map-box iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
+.map-placeholder { height: 100%; min-height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px; background: repeating-linear-gradient(45deg, var(--beige), var(--beige) 14px, var(--blush-soft) 14px, var(--blush-soft) 28px); color: var(--brown-soft); }
+.map-placeholder span { font-size: 2.6rem; color: var(--rose-gold); }
+.map-placeholder code { background: #fff; padding: 2px 8px; border-radius: 6px; font-size: .8rem; }
+
+.footer { background: var(--brown); color: rgba(255, 255, 255, .78); padding-top: 70px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding-bottom: 50px; }
+.footer-brand p { margin: 16px 0 18px; max-width: 320px; font-size: .92rem; }
+.footer h4 { color: #fff; font-size: 1.3rem; margin-bottom: 16px; }
+.footer-col li { margin-bottom: 9px; }
+.footer-col a { font-size: .92rem; transition: var(--transition); }
+.footer-col a:hover { color: var(--rose-gold-light); padding-left: 5px; }
+.socials { display: flex; gap: 12px; }
+.socials a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); display: grid; place-items: center; transition: var(--transition); }
+.socials a:hover { background: var(--rose-gold); border-color: var(--rose-gold); transform: translateY(-3px); }
+.socials svg { width: 20px; height: 20px; }
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, .12); padding: 20px 0; font-size: .82rem; }
+.footer-bottom .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
+.footer-bottom p { margin: 0; }
+
+.whatsapp-float { position: fixed; right: 20px; bottom: 20px; z-index: 900; width: 56px; height: 56px; border-radius: 50%; background: var(--whatsapp); color: #fff; display: grid; place-items: center; box-shadow: 0 8px 22px rgba(31, 168, 85, .45); transition: var(--transition); }
+.whatsapp-float svg { width: 28px; height: 28px; }
+.whatsapp-float:hover { transform: scale(1.1); }
+
+/* ---------- 8. ANIMATIONS ---------- */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+/* If JavaScript is unavailable, never hide content */
+.no-js .reveal { opacity: 1; transform: none; }
+@keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes scrollDot { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(16px); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- 9. RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .section { padding: 80px 0; }
+  .about-grid, .booking-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+  .about-images { max-width: 520px; margin-inline: auto; }
+  .gallery-grid { columns: 2; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+  .package.featured { transform: none; }
+  .package.featured:hover { transform: translateY(-8px); }
+}
+
+@media (max-width: 880px) {
+  .nav-toggle { display: flex; }
+  .nav-menu {
+    position: fixed; top: 0; right: 0; height: 100vh; width: min(320px, 82vw);
+    flex-direction: column; align-items: flex-start; justify-content: center; gap: 22px;
+    padding: 40px 34px; background: var(--cream); box-shadow: -10px 0 40px rgba(0, 0, 0, .18);
+    transform: translateX(105%); transition: transform .4s cubic-bezier(.4, 0, .2, 1); z-index: 1100;
+  }
+  .nav-menu.open { transform: translateX(0); }
+  .nav-menu .nav-link, .header:not(.scrolled) .nav-menu .nav-link { color: var(--brown); font-size: 1.05rem; }
+  .header:not(.scrolled) .nav-menu .nav-link.active { color: var(--rose-gold); }
+  .nav-toggle { position: relative; z-index: 1200; }
+  .header.menu-open .nav-toggle span { background: var(--brown); }
+  .nav-backdrop { position: fixed; inset: 0; background: rgba(40, 24, 20, .5); z-index: 950; opacity: 0; pointer-events: none; transition: var(--transition); }
+  .nav-backdrop.show { opacity: 1; pointer-events: auto; }
+}
+
+@media (max-width: 640px) {
+  .package h3 { min-height: 0; }
+  .section { padding: 64px 0; }
+  .hero-stats { gap: 22px; }
+  .gallery-grid { columns: 1; }
+  .field-row, .why-list { grid-template-columns: 1fr; gap: 0; }
+  .why-list { gap: 16px; }
+  .booking-form { padding: 28px 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-badge { width: 96px; height: 96px; }
+  .lightbox-nav { width: 40px; height: 40px; }
+}
+
+</style>
+  <!-- Safety net: shows a clear message if style.css was not found (e.g. opened from inside a ZIP) -->
+  <script>
+    window.addEventListener("load", function () {
+      var ok = getComputedStyle(document.documentElement).getPropertyValue("--rose-gold").trim();
+      if (!ok) {
+        var b = document.createElement("div");
+        b.setAttribute("style", "position:fixed;z-index:99999;top:0;left:0;right:0;padding:14px 18px;background:#b76e79;color:#fff;font:16px/1.5 Arial,sans-serif;text-align:center");
+        b.textContent = "Styles not loaded. Extract the ZIP first and keep index.html in the same folder as the css, js and images folders. Or open glow-and-grace-standalone.html instead.";
+        document.body.prepend(b);
+      }
+    });
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ 1. NAVIGATION ============ -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Glow and Grace Beauty Studio - Home">
+        <svg class="logo-mark" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 9c4 5 4 9 0 13-4-4-4-8 0-13z" fill="currentColor" opacity=".85"/>
+          <path d="M12 24c4-1 7 0 8 5-5 0-8-2-8-5zM28 24c-4-1-7 0-8 5 5 0 8-2 8-5z" fill="currentColor" opacity=".6"/>
+        </svg>
+        <span class="logo-text"><span data-brand-name>Glow & Grace</span><small>Beauty Studio</small></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#booking" class="btn btn-primary nav-cta">Book Appointment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 2. HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-bg" role="img" aria-label="Elegant beauty salon"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-grid">
+      <div class="hero-content">
+        <p class="eyebrow reveal">Welcome to Glow & Grace Beauty Studio</p>
+        <h1 class="reveal">Discover Your <em>Natural Beauty</em></h1>
+        <p class="hero-sub reveal">Experience Luxury, Care & Confidence</p>
+        <p class="hero-text reveal">A calm, elegant space where skilled stylists and beauty experts bring out the best in you, from everyday glow to your most special occasions.</p>
+        <div class="hero-buttons reveal">
+          <a href="#booking" class="btn btn-primary">Book Your Appointment</a>
+          <a href="#services" class="btn btn-outline-light">Explore Our Services</a>
+        </div>
+        <ul class="hero-stats reveal" aria-label="Studio highlights">
+          <li><strong>10+</strong><span>Beauty Services</span></li>
+          <li><strong>100%</strong><span>Hygiene Focused</span></li>
+          <li><strong>Premium</strong><span>Skin-friendly Products</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="hero-arch"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmJlOWU3Ii8+PHN0b3Agb2Zmc2V0PSIuNiIgc3RvcC1jb2xvcj0iI2YxYzljNCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Q5YTc5YyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZykiLz48Y2lyY2xlIGN4PSIzMzMiIGN5PSIyMDIiIHI9IjExMiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMTE3IiBjeT0iMjk5IiByPSI5NyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjE0OCIgY3k9IjU2OSIgcj0iMTA4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMiIgY3k9Ijg3MSIgcj0iMTc2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNTA5IiBjeT0iMTc2IiByPSI1NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMTg3IiBjeT0iMzM5IiByPSIxNDciIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI4OSIgY3k9IjU2NCIgcj0iNzgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIyMDkiIGN5PSIyMzEiIHI9IjE2OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iODIiIGN5PSI4NjUiIHI9IjY2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUwLDIzMCkgc2NhbGUoMykiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTUwIDc4IEMzNCA2NiAzNCA0MCA1MCAyMiBDNjYgNDAgNjYgNjYgNTAgNzh6Ii8+PHBhdGggZD0iTTUwIDc4IEMzMCA3OCAxNiA2MiAxNCA0NCBDMzIgNDYgNDYgNTggNTAgNzh6Ii8+PHBhdGggZD0iTTUwIDc4IEM3MCA3OCA4NCA2MiA4NiA0NCBDNjggNDYgNTQgNTggNTAgNzh6Ii8+PC9nPgo8dGV4dCB4PSI0MDAiIHk9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjQ0IiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNiI+R0xPVyAmYW1wOyBHUkFDRTwvdGV4dD4KPHRleHQgeD0iNDAwIiB5PSI3NDIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD48L3N2Zz4=" alt="" width="800" height="1000"></div>
+        <span class="chip chip-1">✦ Hair & Makeup</span>
+        <span class="chip chip-2">✦ Skin & Nails</span>
+        <span class="chip chip-3">✦ Bridal Care</span>
+      </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About section"><span></span></a>
+    </section>
+
+    <!-- ============ 3. ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-images reveal">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik91ciBTdHVkaW8gKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2YzZTNkMyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Q5YTc5YyIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNnKSIvPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNwKSIvPjxjaXJjbGUgY3g9IjUwNyIgY3k9Ijc0OSIgcj0iMTQyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iMzkwIiBjeT0iNzI1IiByPSI2OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNTc3IiBjeT0iMTYyIiByPSIxMjUiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIzNzMiIGN5PSI3NDciIHI9IjExMyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjQ1MyIgY3k9IjEzNiIgcj0iMTM3IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSIxNDYiIGN5PSI1MjQiIHI9IjEwMiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNTEiIGN5PSI1MiIgcj0iMTQ5IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjIxMiIgcj0iMTM1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI5NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSI0NTYuMCIgcj0iMTk1Ljg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY0LjAsMzIwLjApIHNjYWxlKDIuNzIpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjQyIiByeD0iMjYiIHJ5PSIzMiIvPjxwYXRoIGQ9Ik01MCA3NCBWOTAgTTM2IDkwIEg2NCIvPjxwYXRoIGQ9Ik0zOCAzMCBxNiAtOCAxNCAtOCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjcxMi4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+T1VSIFNUVURJTzwvdGV4dD4KPHRleHQgeD0iNDAwLjAiIHk9Ijc0Ni4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjg1Ij5TYW1wbGUgaW1hZ2UgwrcgcmVwbGFjZSB3aXRoIHlvdXIgcGhvdG88L3RleHQ+Cjwvc3ZnPg==" alt="Glow and Grace salon interior" class="about-img-main" loading="lazy" width="800" height="1000">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgODAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJCZWF1dHkgQ2FyZSAocGxhY2Vob2xkZXIgaW1hZ2UpIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmJlOWU3Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYjc2ZTc5Ii8+PC9saW5lYXJHcmFkaWVudD4KPHBhdHRlcm4gaWQ9InAiIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjEuNCIgaGVpZ2h0PSIyNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjEwIi8+PC9wYXR0ZXJuPjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgZmlsbD0idXJsKCNwKSIvPjxjaXJjbGUgY3g9Ijc3MSIgY3k9IjMzNSIgcj0iMTc2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzcyIiBjeT0iODEiIHI9IjE3MSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjY0MiIgY3k9IjQ1MCIgcj0iMTcyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMTkzIiBjeT0iNTc0IiByPSIxNDkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIyNjEiIGN5PSI3MjciIHI9IjEyOSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjY5NiIgY3k9IjIxMiIgcj0iMTE3IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMTkzIiBjeT0iMTI2IiByPSIxNTQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI2MjMiIGN5PSI2OTciIHI9IjE3NiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI3NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIzOTIuMCIgcj0iMTk1Ljg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY0LjAsMjU2LjApIHNjYWxlKDIuNzIpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik01MCAxMiBRNTUgNDUgODggNTAgUTU1IDU1IDUwIDg4IFE0NSA1NSAxMiA1MCBRNDUgNDUgNTAgMTJ6Ii8+PHBhdGggZD0iTTc4IDE0IFE4MCAyNCA5MCAyNiBRODAgMjggNzggMzggUTc2IDI4IDY2IDI2IFE3NiAyNCA3OCAxNHoiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI2MjQuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPkJFQVVUWSBDQVJFPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNjU4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Beauty care treatment" class="about-img-small" loading="lazy" width="800" height="800">
+          <div class="about-badge"><strong>Luxury</strong><span>Salon Experience</span></div>
+        </div>
+
+        <div class="about-text">
+          <p class="eyebrow reveal">About Us</p>
+          <h2 class="section-title reveal">Where Beauty Meets <em>Care</em></h2>
+          <p class="reveal">Glow & Grace Beauty Studio is a modern salon created for people who want to look and feel their very best. Our team combines professional training with a warm, personal approach, so every visit feels relaxing and every result feels like you.</p>
+          <p class="reveal"><strong>Our beauty philosophy:</strong> true beauty is about confidence. We enhance your natural features with gentle, skin-friendly products and techniques instead of hiding them.</p>
+          <p class="reveal">From a quick manicure to a complete bridal transformation, we provide professional beauty care in a clean, comfortable and luxurious setting.</p>
+
+          <h3 class="why-title reveal">Why Choose Us</h3>
+          <ul class="why-list">
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Experienced Professionals</strong><p>Trained stylists and beauty experts.</p></div></li>
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Premium Products</strong><p>Quality, skin-friendly products only.</p></div></li>
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Hygiene First</strong><p>Sanitised tools and a spotless space.</p></div></li>
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Personalised Care</strong><p>Every look is designed around you.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. SERVICES ============ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Our Services</p>
+          <h2 class="section-title reveal">Treatments Made for <em>You</em></h2>
+          <p class="section-sub reveal">Choose from our full range of beauty services.</p>
+          <p class="demo-note reveal">Demo prices: all prices shown are sample prices and can be customised for each salon.</p>
+        </header>
+
+        <div class="cards-grid">
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYWlyIFN0eWxpbmcgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y4ZGZlMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M5OGY4NiIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI1MTMiIGN5PSIyNTYiIHI9IjgzIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iMzQ4IiBjeT0iMjIyIiByPSIxMjAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjUxMiIgY3k9IjMzMiIgcj0iMTI3IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNjkyIiBjeT0iNTkzIiByPSI5NyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMjEiIGN5PSI2NSIgcj0iOTMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjY1MSIgY3k9IjI5NyIgcj0iNjciIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjU0MyIgY3k9IjMyIiByPSI3OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMTEwIiBjeT0iNDA3IiByPSI4NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMzIiIGN5PSI3MiIgcj0iMTEiLz48Y2lyY2xlIGN4PSI2OCIgY3k9IjcyIiByPSIxMSIvPjxwYXRoIGQ9Ik00MCA2MyBMNzAgMTggTTYwIDYzIEwzMCAxOCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjQ2OC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+SEFJUiBTVFlMSU5HPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Hair styling" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Hair Styling</h3>
+              <p>Cuts, blow-dries and styling designed to suit your face shape and lifestyle.</p>
+              <div class="card-foot"><span class="price">From ₹500</span><button class="link-btn" data-service="Hair Styling">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYWlyIENvbG9yaW5nIChwbGFjZWhvbGRlciBpbWFnZSkiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmM2Q5Y2YiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNiNzZlNzkiLz48L2xpbmVhckdyYWRpZW50Pgo8cGF0dGVybiBpZD0icCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMS40IiBoZWlnaHQ9IjI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTAiLz48L3BhdHRlcm4+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNnKSIvPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI3ApIi8+PGNpcmNsZSBjeD0iMTU5IiBjeT0iMjYyIiByPSI0OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjU0OSIgY3k9IjQwMyIgcj0iNDgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIyNzciIGN5PSI0MTIiIHI9IjExMyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjM5OSIgY3k9IjQ3NiIgcj0iMTEzIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNTE5IiBjeT0iNDk5IiByPSI2NyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNjk2IiBjeT0iMzI1IiByPSIxMDQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI2NDEiIGN5PSIyNCIgcj0iMTE0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI2MDMiIGN5PSIyMCIgcj0iMTMwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTUwIDE0IEM2NiA0MCA3OCA1MiA3OCA2NiBhMjggMjggMCAwIDEgLTU2IDAgQzIyIDUyIDM0IDQwIDUwIDE0eiIvPjxwYXRoIGQ9Ik0zOCA2OCBhMTIgMTIgMCAwIDAgMTIgMTIiIC8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iNDY4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzMiIGZpbGw9IiNmZmYiIGxldHRlci1zcGFjaW5nPSI0Ij5IQUlSIENPTE9SSU5HPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Hair coloring" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Hair Coloring</h3>
+              <p>Global colour, highlights and balayage using gentle, long-lasting formulas.</p>
+              <div class="card-foot"><span class="price">From ₹1,800</span><button class="link-btn" data-service="Hair Coloring">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJCcmlkYWwgTWFrZXVwIChwbGFjZWhvbGRlciBpbWFnZSkiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmYmU0ZTYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjMjdjODYiLz48L2xpbmVhckdyYWRpZW50Pgo8cGF0dGVybiBpZD0icCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMS40IiBoZWlnaHQ9IjI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTAiLz48L3BhdHRlcm4+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNnKSIvPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI3ApIi8+PGNpcmNsZSBjeD0iMTk2IiBjeT0iMTUzIiByPSI1MSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjQ0NiIgY3k9IjYzIiByPSI0OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjEzIiBjeT0iMjkwIiByPSI4OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9Ijc4MCIgY3k9IjE0NyIgcj0iNzMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI1NjAiIGN5PSI4OCIgcj0iMzkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjI0NSIgY3k9IjI3NCIgcj0iNDMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIyNiIgY3k9IjQ0NSIgcj0iOTYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI3MDciIGN5PSI0OTYiIHI9IjEzMiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE4IDcyIEwyNCAzMiBMNDAgNTIgTDUwIDI0IEw2MCA1MiBMNzYgMzIgTDgyIDcyIFoiLz48cGF0aCBkPSJNMTggODIgSDgyIi8+PGNpcmNsZSBjeD0iMjQiIGN5PSIyOCIgcj0iMyIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMjAiIHI9IjMiLz48Y2lyY2xlIGN4PSI3NiIgY3k9IjI4IiByPSIzIi8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iNDY4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzMiIGZpbGw9IiNmZmYiIGxldHRlci1zcGFjaW5nPSI0Ij5CUklEQUwgTUFLRVVQPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Bridal makeup" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Bridal Makeup</h3>
+              <p>A flawless, long-lasting bridal look that photographs beautifully.</p>
+              <div class="card-foot"><span class="price">From ₹15,000</span><button class="link-btn" data-service="Bridal Makeup">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJQYXJ0eSBNYWtldXAgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y3ZDZkYSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I3NmU3OSIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI1NDYiIGN5PSIxMDYiIHI9IjEyNCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjcyNyIgY3k9IjY1IiByPSIxMjUiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjY2NSIgY3k9IjU1OCIgcj0iMTEyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSIyNjUiIGN5PSIyNzMiIHI9IjExNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjczOCIgY3k9IjE0MSIgcj0iODEiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIxNzIiIGN5PSIyMzkiIHI9IjM3IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNTg2IiBjeT0iMjMwIiByPSIxMDAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIxNjUiIGN5PSI1NSIgcj0iODEiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz4KPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNzU2IiBoZWlnaHQ9IjU1NiIgcng9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI0MDAuMCIgY3k9IjI5NC4wIiByPSIxNDYuODgwMDAwMDAwMDAwMDIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xNiIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyOTguMCwxOTIuMCkgc2NhbGUoMi4wNDAwMDAwMDAwMDAwMDA1KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzNiIgeT0iNTIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzNCIgcng9IjMiLz48cmVjdCB4PSI0MCIgeT0iMzgiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxNCIvPjxwYXRoIGQ9Ik00MCAzOCBMNjAgMjQgTDYwIDM4Ii8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iNDY4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzMiIGZpbGw9IiNmZmYiIGxldHRlci1zcGFjaW5nPSI0Ij5QQVJUWSBNQUtFVVA8L3RleHQ+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI1MDIuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii44NSI+U2FtcGxlIGltYWdlIMK3IHJlcGxhY2Ugd2l0aCB5b3VyIHBob3RvPC90ZXh0Pgo8L3N2Zz4=" alt="Party makeup" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Party Makeup</h3>
+              <p>Glamorous makeup for parties, functions and special evenings.</p>
+              <div class="card-foot"><span class="price">From ₹3,500</span><button class="link-btn" data-service="Party Makeup">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJGYWNpYWwgVHJlYXRtZW50IChwbGFjZWhvbGRlciBpbWFnZSkiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmOWU3ZGMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkNGExOTAiLz48L2xpbmVhckdyYWRpZW50Pgo8cGF0dGVybiBpZD0icCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMS40IiBoZWlnaHQ9IjI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTAiLz48L3BhdHRlcm4+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNnKSIvPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI3ApIi8+PGNpcmNsZSBjeD0iMTUxIiBjeT0iNDA4IiByPSI1OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjUxMyIgY3k9IjI3NCIgcj0iODMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjMwOSIgY3k9IjQzOSIgcj0iOTEiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIzNTEiIGN5PSIxNzgiIHI9IjkxIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI4OSIgY3k9Ijg5IiByPSIxMDciIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjQ2NyIgY3k9IjI1NSIgcj0iNDMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI3MDIiIGN5PSI0ODUiIHI9IjEyMSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNDA0IiBjeT0iNDI3IiByPSIxMTQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz4KPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNzU2IiBoZWlnaHQ9IjU1NiIgcng9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI0MDAuMCIgY3k9IjI5NC4wIiByPSIxNDYuODgwMDAwMDAwMDAwMDIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xNiIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyOTguMCwxOTIuMCkgc2NhbGUoMi4wNDAwMDAwMDAwMDAwMDA1KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48ZWxsaXBzZSBjeD0iNTAiIGN5PSI0OCIgcng9IjI2IiByeT0iMzQiLz48cGF0aCBkPSJNMzggNDQgcTQgLTQgOCAwIE01NCA0NCBxNCAtNCA4IDAiLz48cGF0aCBkPSJNNDAgNjIgcTEwIDEwIDIwIDAiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI0NjguMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPkZBQ0lBTCBUUkVBVE1FTlQ8L3RleHQ+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI1MDIuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii44NSI+U2FtcGxlIGltYWdlIMK3IHJlcGxhY2Ugd2l0aCB5b3VyIHBob3RvPC90ZXh0Pgo8L3N2Zz4=" alt="Facial treatment" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Facial Treatment</h3>
+              <p>Deep cleansing facials that refresh, hydrate and brighten your skin.</p>
+              <div class="card-foot"><span class="price">From ₹1,200</span><button class="link-btn" data-service="Facial Treatment">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTa2luIENhcmUgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y0ZTZkOCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M5OTY4YSIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI3NzMiIGN5PSI0MzciIHI9IjEzMCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9Ijc5NiIgY3k9IjM4NiIgcj0iMTEzIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMTM3IiBjeT0iNDc1IiByPSI2OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjAiIGN5PSI2IiByPSIxMzAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSI1NDQiIHI9IjEyMCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjY0MyIgY3k9IjMyOCIgcj0iMTIwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNDIyIiBjeT0iNTgzIiByPSI1NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjEzMiIgY3k9IjExMSIgcj0iNzgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz4KPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNzU2IiBoZWlnaHQ9IjU1NiIgcng9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI0MDAuMCIgY3k9IjI5NC4wIiByPSIxNDYuODgwMDAwMDAwMDAwMDIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xNiIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyOTguMCwxOTIuMCkgc2NhbGUoMi4wNDAwMDAwMDAwMDAwMDA1KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTggNzggQzE2IDQyIDQ0IDIwIDgyIDIwIEM4NCA1NiA2MCA4NCAxOCA3OHoiLz48cGF0aCBkPSJNMTggNzggQzM4IDU4IDU0IDQ0IDcwIDM0Ii8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iNDY4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzMiIGZpbGw9IiNmZmYiIGxldHRlci1zcGFjaW5nPSI0Ij5TS0lOIENBUkU8L3RleHQ+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI1MDIuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii44NSI+U2FtcGxlIGltYWdlIMK3IHJlcGxhY2Ugd2l0aCB5b3VyIHBob3RvPC90ZXh0Pgo8L3N2Zz4=" alt="Skin care" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Skin Care</h3>
+              <p>Personalised skin treatments for glow, clarity and healthy skin.</p>
+              <div class="card-foot"><span class="price">From ₹2,000</span><button class="link-btn" data-service="Skin Care">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJNYW5pY3VyZSAocGxhY2Vob2xkZXIgaW1hZ2UpIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmJkZmUzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYzk4Zjg2Ii8+PC9saW5lYXJHcmFkaWVudD4KPHBhdHRlcm4gaWQ9InAiIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjEuNCIgaGVpZ2h0PSIyNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjEwIi8+PC9wYXR0ZXJuPjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNwKSIvPjxjaXJjbGUgY3g9IjQyNSIgY3k9IjMxNyIgcj0iNTgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9Ijc2MSIgY3k9IjE4NSIgcj0iMTA1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNDU1IiBjeT0iMzgiIHI9IjY0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI0MTIiIGN5PSI2MDAiIHI9IjExNSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjYwOSIgY3k9IjYzIiByPSI4MSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjUzMSIgY3k9IjUwOSIgcj0iNTgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI2MDMiIGN5PSIzMjkiIHI9IjQ4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNjgyIiBjeT0iMjY4IiByPSI4NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPgo8cmVjdCB4PSIyMiIgeT0iMjIiIHdpZHRoPSI3NTYiIGhlaWdodD0iNTU2IiByeD0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii41NSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjQwMC4wIiBjeT0iMjk0LjAiIHI9IjE0Ni44ODAwMDAwMDAwMDAwMiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjE2Ii8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI5OC4wLDE5Mi4wKSBzY2FsZSgyLjA0MDAwMDAwMDAwMDAwMDUpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjM0IiB5PSI0NiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjQwIiByeD0iOCIvPjxyZWN0IHg9IjQyIiB5PSIyMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iMyIvPjxwYXRoIGQ9Ik00MiA1NiBINTgiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI0NjguMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPk1BTklDVVJFPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Manicure" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Manicure</h3>
+              <p>Nail shaping, cuticle care and polish for beautiful, healthy hands.</p>
+              <div class="card-foot"><span class="price">From ₹600</span><button class="link-btn" data-service="Manicure">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJQZWRpY3VyZSAocGxhY2Vob2xkZXIgaW1hZ2UpIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjZlMGQ0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYjc2ZTc5Ii8+PC9saW5lYXJHcmFkaWVudD4KPHBhdHRlcm4gaWQ9InAiIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjEuNCIgaGVpZ2h0PSIyNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjEwIi8+PC9wYXR0ZXJuPjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNwKSIvPjxjaXJjbGUgY3g9IjIxIiBjeT0iMTM5IiByPSIxMjgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI0NjYiIGN5PSIzOTUiIHI9IjY5IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzE5IiBjeT0iNTkwIiByPSI2NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMTk4IiBjeT0iMTMiIHI9IjEwOSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjUwMyIgY3k9IjQxNiIgcj0iNTkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIxOTciIGN5PSIzMTYiIHI9Ijk2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNDIzIiBjeT0iMTk3IiByPSI4MyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNTczIiBjeT0iNjciIHI9Ijg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz4KPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNzU2IiBoZWlnaHQ9IjU1NiIgcng9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI0MDAuMCIgY3k9IjI5NC4wIiByPSIxNDYuODgwMDAwMDAwMDAwMDIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xNiIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyOTguMCwxOTIuMCkgc2NhbGUoMi4wNDAwMDAwMDAwMDAwMDA1KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNTAgNzggQzM0IDY2IDM0IDQwIDUwIDIyIEM2NiA0MCA2NiA2NiA1MCA3OHoiLz48cGF0aCBkPSJNNTAgNzggQzMwIDc4IDE2IDYyIDE0IDQ0IEMzMiA0NiA0NiA1OCA1MCA3OHoiLz48cGF0aCBkPSJNNTAgNzggQzcwIDc4IDg0IDYyIDg2IDQ0IEM2OCA0NiA1NCA1OCA1MCA3OHoiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI0NjguMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPlBFRElDVVJFPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Pedicure" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Pedicure</h3>
+              <p>A relaxing foot soak, scrub and polish that leaves feet soft and smooth.</p>
+              <div class="card-foot"><span class="price">From ₹800</span><button class="link-btn" data-service="Pedicure">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJXYXhpbmcgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y5ZTRkZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2QwOWE4ZiIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI3MSIgY3k9IjcyIiByPSI2OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMzkwIiByPSI5OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9Ijc1MCIgY3k9IjUxNiIgcj0iNDQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIzMTEiIGN5PSIzNDQiIHI9IjU0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNzE1IiBjeT0iNDU0IiByPSI0MiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iODYiIGN5PSI1MTMiIHI9IjExMiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjMxIiBjeT0iMTUwIiByPSIxMTIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI2OTkiIGN5PSIyMzIiIHI9IjUwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE0IDM2IHExMiAtMTQgMjQgMCB0MjQgMCB0MjQgMCIvPjxwYXRoIGQ9Ik0xNCA1MiBxMTIgLTE0IDI0IDAgdDI0IDAgdDI0IDAiLz48cGF0aCBkPSJNMTQgNjggcTEyIC0xNCAyNCAwIHQyNCAwIHQyNCAwIi8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iNDY4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzMiIGZpbGw9IiNmZmYiIGxldHRlci1zcGFjaW5nPSI0Ij5XQVhJTkc8L3RleHQ+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI1MDIuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii44NSI+U2FtcGxlIGltYWdlIMK3IHJlcGxhY2Ugd2l0aCB5b3VyIHBob3RvPC90ZXh0Pgo8L3N2Zz4=" alt="Waxing" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Waxing</h3>
+              <p>Gentle, hygienic waxing for smooth skin with minimal discomfort.</p>
+              <div class="card-foot"><span class="price">From ₹300</span><button class="link-btn" data-service="Waxing">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYWlyIFNwYSAocGxhY2Vob2xkZXIgaW1hZ2UpIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjVkY2Q4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYmY4MTc5Ii8+PC9saW5lYXJHcmFkaWVudD4KPHBhdHRlcm4gaWQ9InAiIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjEuNCIgaGVpZ2h0PSIyNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjEwIi8+PC9wYXR0ZXJuPjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNwKSIvPjxjaXJjbGUgY3g9Ijc4MSIgY3k9Ijk1IiByPSIxMjIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIxNzUiIGN5PSI1NzAiIHI9Ijk5IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNzE3IiBjeT0iNDEiIHI9Ijc1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iMzAiIGN5PSI1NSIgcj0iNzIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9Ijk0IiBjeT0iNDg5IiByPSI1OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNDkwIiBjeT0iMzEiIHI9IjEwMSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjY4NSIgY3k9IjIxNCIgcj0iNDciIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI2NTAiIGN5PSI1OTgiIHI9IjEwMiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTMwIDE0IEMxMCA0MCA1MCA1MiAzMCA4NiIvPjxwYXRoIGQ9Ik01MCAxNCBDMzAgNDAgNzAgNTIgNTAgODYiLz48cGF0aCBkPSJNNzAgMTQgQzUwIDQwIDkwIDUyIDcwIDg2Ii8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iNDY4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzMiIGZpbGw9IiNmZmYiIGxldHRlci1zcGFjaW5nPSI0Ij5IQUlSIFNQQTwvdGV4dD4KPHRleHQgeD0iNDAwLjAiIHk9IjUwMi4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjg1Ij5TYW1wbGUgaW1hZ2UgwrcgcmVwbGFjZSB3aXRoIHlvdXIgcGhvdG88L3RleHQ+Cjwvc3ZnPg==" alt="Hair spa" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Hair Spa</h3>
+              <p>Deep nourishing treatment that restores shine, softness and strength.</p>
+              <div class="card-foot"><span class="price">From ₹1,500</span><button class="link-btn" data-service="Hair Spa">Book this</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. SPECIAL PACKAGES ============ -->
+    <section class="section packages" id="pricing">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Pricing</p>
+          <h2 class="section-title reveal">Special <em>Packages</em></h2>
+          <p class="section-sub reveal">Save more with our curated beauty bundles.</p>
+          <p class="demo-note reveal">Demo prices: sample package rates for presentation only.</p>
+        </header>
+
+        <div class="packages-grid">
+          <article class="package reveal">
+            <h3>Bridal Beauty Package</h3>
+            <p class="package-price">₹24,999</p>
+            <p class="package-desc">Bridal makeup, hair styling, facial, manicure and pedicure for your big day.</p>
+            <ul>
+              <li>Pre-bridal facial</li>
+              <li>HD bridal makeup</li>
+              <li>Hair styling</li>
+              <li>Manicure & pedicure</li>
+            </ul>
+            <button class="btn btn-outline" data-service="Bridal Beauty Package">Enquire Now</button>
+          </article>
+
+          <article class="package featured reveal">
+            <span class="ribbon">Most Popular</span>
+            <h3>Complete Beauty Package</h3>
+            <p class="package-price">₹6,999</p>
+            <p class="package-desc">A full pamper session from head to toe, ideal for any occasion.</p>
+            <ul>
+              <li>Hair styling or spa</li>
+              <li>Glow facial</li>
+              <li>Manicure & pedicure</li>
+              <li>Party makeup</li>
+            </ul>
+            <button class="btn btn-primary" data-service="Complete Beauty Package">Enquire Now</button>
+          </article>
+
+          <article class="package reveal">
+            <h3>Glow Facial Package</h3>
+            <p class="package-price">₹3,499</p>
+            <p class="package-desc">Three facial sessions to deeply cleanse, hydrate and brighten your skin.</p>
+            <ul>
+              <li>3 facial sessions</li>
+              <li>Skin analysis</li>
+              <li>Deep cleansing</li>
+              <li>Brightening mask</li>
+            </ul>
+            <button class="btn btn-outline" data-service="Glow Facial Package">Enquire Now</button>
+          </article>
+
+          <article class="package reveal">
+            <h3>Hair Care Package</h3>
+            <p class="package-price">₹3,999</p>
+            <p class="package-desc">Restore shine and strength with a spa, trim and styling combination.</p>
+            <ul>
+              <li>Hair spa</li>
+              <li>Trim & cut</li>
+              <li>Blow-dry styling</li>
+              <li>Scalp treatment</li>
+            </ul>
+            <button class="btn btn-outline" data-service="Hair Care Package">Enquire Now</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. GALLERY ============ -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Our Gallery</p>
+          <h2 class="section-title reveal">A Glimpse of <em>Glow & Grace</em></h2>
+          <p class="section-sub reveal">Sample placeholder images: replace with your real salon photos.</p>
+        </header>
+
+        <div class="gallery-grid">
+          <button class="gallery-item tall reveal" data-full="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNhbG9uIEludGVyaW9yIChwbGFjZWhvbGRlciBpbWFnZSkiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmM2UzZDMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjOThmODYiLz48L2xpbmVhckdyYWRpZW50Pgo8cGF0dGVybiBpZD0icCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMS40IiBoZWlnaHQ9IjI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTAiLz48L3BhdHRlcm4+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSIyMDkiIGN5PSIxMzQiIHI9IjUyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNjgwIiBjeT0iNDQ2IiByPSI5NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjMyOSIgY3k9Ijk4MCIgcj0iMTIxIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iMTg1IiBjeT0iNzI1IiByPSI0OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjQiIGN5PSI1NjEiIHI9IjE1OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMzczIiBjeT0iODMwIiByPSI3NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjE4NiIgY3k9IjUxIiByPSI4NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9Ijc0MSIgY3k9IjIyNiIgcj0iNjQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPgo8cmVjdCB4PSIyMiIgeT0iMjIiIHdpZHRoPSI3NTYiIGhlaWdodD0iOTU2IiByeD0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii41NSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjQwMC4wIiBjeT0iNDU2LjAiIHI9IjE5NS44NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjE2Ii8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2NC4wLDMyMC4wKSBzY2FsZSgyLjcyKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48ZWxsaXBzZSBjeD0iNTAiIGN5PSI0MiIgcng9IjI2IiByeT0iMzIiLz48cGF0aCBkPSJNNTAgNzQgVjkwIE0zNiA5MCBINjQiLz48cGF0aCBkPSJNMzggMzAgcTYgLTggMTQgLTgiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI3MTIuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPlNBTE9OIElOVEVSSU9SPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNzQ2LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" data-alt="Salon interior" aria-label="View larger: Salon interior">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNhbG9uIEludGVyaW9yIChwbGFjZWhvbGRlciBpbWFnZSkiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmM2UzZDMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjOThmODYiLz48L2xpbmVhckdyYWRpZW50Pgo8cGF0dGVybiBpZD0icCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMS40IiBoZWlnaHQ9IjI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTAiLz48L3BhdHRlcm4+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSIyMDkiIGN5PSIxMzQiIHI9IjUyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNjgwIiBjeT0iNDQ2IiByPSI5NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjMyOSIgY3k9Ijk4MCIgcj0iMTIxIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iMTg1IiBjeT0iNzI1IiByPSI0OCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjQiIGN5PSI1NjEiIHI9IjE1OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMzczIiBjeT0iODMwIiByPSI3NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjE4NiIgY3k9IjUxIiByPSI4NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9Ijc0MSIgY3k9IjIyNiIgcj0iNjQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPgo8cmVjdCB4PSIyMiIgeT0iMjIiIHdpZHRoPSI3NTYiIGhlaWdodD0iOTU2IiByeD0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii41NSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjQwMC4wIiBjeT0iNDU2LjAiIHI9IjE5NS44NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjE2Ii8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2NC4wLDMyMC4wKSBzY2FsZSgyLjcyKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48ZWxsaXBzZSBjeD0iNTAiIGN5PSI0MiIgcng9IjI2IiByeT0iMzIiLz48cGF0aCBkPSJNNTAgNzQgVjkwIE0zNiA5MCBINjQiLz48cGF0aCBkPSJNMzggMzAgcTYgLTggMTQgLTgiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI3MTIuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPlNBTE9OIElOVEVSSU9SPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNzQ2LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Salon interior" loading="lazy" width="800" height="1000"><span class="gallery-cap">Salon Interior</span>
+          </button>
+          <button class="gallery-item reveal" data-full="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJNYWtldXAgVHJhbnNmb3JtYXRpb24gKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZiZTBlMyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I3NmU3OSIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI0NTgiIGN5PSI0NTUiIHI9IjY3IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSIyOTYiIGN5PSIzMjMiIHI9IjgzIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNjA4IiBjeT0iNDY5IiByPSI2NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNjU4IiBjeT0iMzk4IiByPSI5NyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjczNiIgY3k9IjU0NCIgcj0iMzgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI0NjEiIGN5PSI2OSIgcj0iMTMwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI1MTMiIGN5PSIyMTMiIHI9IjYyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI2NzYiIGN5PSI0MDciIHI9Ijg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iMzYiIHk9IjUyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzQiIHJ4PSIzIi8+PHJlY3QgeD0iNDAiIHk9IjM4IiB3aWR0aD0iMjAiIGhlaWdodD0iMTQiLz48cGF0aCBkPSJNNDAgMzggTDYwIDI0IEw2MCAzOCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjQ2OC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+TUFLRVVQIFRSQU5TRk9STUFUSU9OPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" data-alt="Makeup transformation" aria-label="View larger: Makeup transformation">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJNYWtldXAgVHJhbnNmb3JtYXRpb24gKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZiZTBlMyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I3NmU3OSIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI0NTgiIGN5PSI0NTUiIHI9IjY3IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSIyOTYiIGN5PSIzMjMiIHI9IjgzIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNjA4IiBjeT0iNDY5IiByPSI2NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNjU4IiBjeT0iMzk4IiByPSI5NyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjczNiIgY3k9IjU0NCIgcj0iMzgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI0NjEiIGN5PSI2OSIgcj0iMTMwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI1MTMiIGN5PSIyMTMiIHI9IjYyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI2NzYiIGN5PSI0MDciIHI9Ijg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iMzYiIHk9IjUyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzQiIHJ4PSIzIi8+PHJlY3QgeD0iNDAiIHk9IjM4IiB3aWR0aD0iMjAiIGhlaWdodD0iMTQiLz48cGF0aCBkPSJNNDAgMzggTDYwIDI0IEw2MCAzOCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjQ2OC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+TUFLRVVQIFRSQU5TRk9STUFUSU9OPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Makeup transformation" loading="lazy" width="800" height="600"><span class="gallery-cap">Makeup Transformation</span>
+          </button>
+          <button class="gallery-item reveal" data-full="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgODAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYWlyIFN0eWxpbmcgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y3ZGNkOSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2QwOWE4ZiIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI0MTAiIGN5PSI0OTkiIHI9IjEyOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjY2NSIgY3k9IjM0MSIgcj0iODQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjQxIiBjeT0iMTAyIiByPSIxMzMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI1NDAiIGN5PSI3MjciIHI9IjY4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNzAxIiBjeT0iNDcyIiByPSIxMTkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI0NDIiIGN5PSI0MjMiIHI9Ijk1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzcwIiBjeT0iMjc2IiByPSI5MiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMzI3IiBjeT0iMzU3IiByPSIxMjgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz4KPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNzU2IiBoZWlnaHQ9Ijc1NiIgcng9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI0MDAuMCIgY3k9IjM5Mi4wIiByPSIxOTUuODQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xNiIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNjQuMCwyNTYuMCkgc2NhbGUoMi43MikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMzIiIGN5PSI3MiIgcj0iMTEiLz48Y2lyY2xlIGN4PSI2OCIgY3k9IjcyIiByPSIxMSIvPjxwYXRoIGQ9Ik00MCA2MyBMNzAgMTggTTYwIDYzIEwzMCAxOCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjYyNC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+SEFJUiBTVFlMSU5HPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNjU4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" data-alt="Hair styling" aria-label="View larger: Hair styling">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgODAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYWlyIFN0eWxpbmcgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y3ZGNkOSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2QwOWE4ZiIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSI0MTAiIGN5PSI0OTkiIHI9IjEyOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjY2NSIgY3k9IjM0MSIgcj0iODQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjQxIiBjeT0iMTAyIiByPSIxMzMiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI1NDAiIGN5PSI3MjciIHI9IjY4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNzAxIiBjeT0iNDcyIiByPSIxMTkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI0NDIiIGN5PSI0MjMiIHI9Ijk1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzcwIiBjeT0iMjc2IiByPSI5MiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMzI3IiBjeT0iMzU3IiByPSIxMjgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz4KPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNzU2IiBoZWlnaHQ9Ijc1NiIgcng9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI0MDAuMCIgY3k9IjM5Mi4wIiByPSIxOTUuODQiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xNiIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNjQuMCwyNTYuMCkgc2NhbGUoMi43MikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMzIiIGN5PSI3MiIgcj0iMTEiLz48Y2lyY2xlIGN4PSI2OCIgY3k9IjcyIiByPSIxMSIvPjxwYXRoIGQ9Ik00MCA2MyBMNzAgMTggTTYwIDYzIEwzMCAxOCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjYyNC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+SEFJUiBTVFlMSU5HPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNjU4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Hair styling" loading="lazy" width="800" height="800"><span class="gallery-cap">Hair Styling</span>
+          </button>
+          <button class="gallery-item tall reveal" data-full="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkJyaWRhbCBMb29rIChwbGFjZWhvbGRlciBpbWFnZSkiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmYmU0ZTYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjMjdjODYiLz48L2xpbmVhckdyYWRpZW50Pgo8cGF0dGVybiBpZD0icCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMS40IiBoZWlnaHQ9IjI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTAiLz48L3BhdHRlcm4+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSIxOTIiIGN5PSI2NDEiIHI9IjE2OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjU0MyIgY3k9Ijg4MCIgcj0iMTY2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMzgiIGN5PSI4NzUiIHI9IjEyMSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNjM3IiBjeT0iMjI3IiByPSIxNDgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI2NjMiIGN5PSI3MDYiIHI9IjkyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNTEyIiBjeT0iMzAiIHI9IjY4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzM4IiBjeT0iMTI3IiByPSI1NiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMjY0IiBjeT0iMTMyIiByPSI4NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI5NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSI0NTYuMCIgcj0iMTk1Ljg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY0LjAsMzIwLjApIHNjYWxlKDIuNzIpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOCA3MiBMMjQgMzIgTDQwIDUyIEw1MCAyNCBMNjAgNTIgTDc2IDMyIEw4MiA3MiBaIi8+PHBhdGggZD0iTTE4IDgyIEg4MiIvPjxjaXJjbGUgY3g9IjI0IiBjeT0iMjgiIHI9IjMiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjIwIiByPSIzIi8+PGNpcmNsZSBjeD0iNzYiIGN5PSIyOCIgcj0iMyIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjcxMi4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+QlJJREFMIExPT0s8L3RleHQ+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI3NDYuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii44NSI+U2FtcGxlIGltYWdlIMK3IHJlcGxhY2Ugd2l0aCB5b3VyIHBob3RvPC90ZXh0Pgo8L3N2Zz4=" data-alt="Bridal makeup" aria-label="View larger: Bridal makeup">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkJyaWRhbCBMb29rIChwbGFjZWhvbGRlciBpbWFnZSkiPgo8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmYmU0ZTYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjMjdjODYiLz48L2xpbmVhckdyYWRpZW50Pgo8cGF0dGVybiBpZD0icCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMS40IiBoZWlnaHQ9IjI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTAiLz48L3BhdHRlcm4+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSIxOTIiIGN5PSI2NDEiIHI9IjE2OSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjU0MyIgY3k9Ijg4MCIgcj0iMTY2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMzgiIGN5PSI4NzUiIHI9IjEyMSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iNjM3IiBjeT0iMjI3IiByPSIxNDgiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI2NjMiIGN5PSI3MDYiIHI9IjkyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iNTEyIiBjeT0iMzAiIHI9IjY4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzM4IiBjeT0iMTI3IiByPSI1NiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMjY0IiBjeT0iMTMyIiByPSI4NSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI5NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSI0NTYuMCIgcj0iMTk1Ljg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY0LjAsMzIwLjApIHNjYWxlKDIuNzIpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOCA3MiBMMjQgMzIgTDQwIDUyIEw1MCAyNCBMNjAgNTIgTDc2IDMyIEw4MiA3MiBaIi8+PHBhdGggZD0iTTE4IDgyIEg4MiIvPjxjaXJjbGUgY3g9IjI0IiBjeT0iMjgiIHI9IjMiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjIwIiByPSIzIi8+PGNpcmNsZSBjeD0iNzYiIGN5PSIyOCIgcj0iMyIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjcxMi4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+QlJJREFMIExPT0s8L3RleHQ+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI3NDYuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii44NSI+U2FtcGxlIGltYWdlIMK3IHJlcGxhY2Ugd2l0aCB5b3VyIHBob3RvPC90ZXh0Pgo8L3N2Zz4=" alt="Bridal makeup" loading="lazy" width="800" height="1000"><span class="gallery-cap">Bridal Makeup</span>
+          </button>
+          <button class="gallery-item reveal" data-full="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTa2luY2FyZSBSaXR1YWwgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y5ZTdkYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M5OTY4YSIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSIxODUiIGN5PSIyMDQiIHI9Ijk1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNDI2IiBjeT0iNTI2IiByPSI4MiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9Ijc1OCIgY3k9IjIyMyIgcj0iNDkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI0NjgiIGN5PSIyNyIgcj0iMTA4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI0MTkiIGN5PSIzNTEiIHI9IjkwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzA1IiBjeT0iMzM2IiByPSI4MSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjUyNSIgY3k9IjIzNyIgcj0iMTE0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMzUiIGN5PSI1NzQiIHI9IjYzIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE4IDc4IEMxNiA0MiA0NCAyMCA4MiAyMCBDODQgNTYgNjAgODQgMTggNzh6Ii8+PHBhdGggZD0iTTE4IDc4IEMzOCA1OCA1NCA0NCA3MCAzNCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjQ2OC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+U0tJTkNBUkUgUklUVUFMPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" data-alt="Skincare" aria-label="View larger: Skincare">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTa2luY2FyZSBSaXR1YWwgKHBsYWNlaG9sZGVyIGltYWdlKSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y5ZTdkYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M5OTY4YSIvPjwvbGluZWFyR3JhZGllbnQ+CjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxLjQiIGhlaWdodD0iMjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMCIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjcCkiLz48Y2lyY2xlIGN4PSIxODUiIGN5PSIyMDQiIHI9Ijk1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNDI2IiBjeT0iNTI2IiByPSI4MiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9Ijc1OCIgY3k9IjIyMyIgcj0iNDkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI0NjgiIGN5PSIyNyIgcj0iMTA4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI0MTkiIGN5PSIzNTEiIHI9IjkwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+PGNpcmNsZSBjeD0iNzA1IiBjeT0iMzM2IiByPSI4MSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjUyNSIgY3k9IjIzNyIgcj0iMTE0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMzUiIGN5PSI1NzQiIHI9IjYzIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIyIi8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI1NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIyOTQuMCIgcj0iMTQ2Ljg4MDAwMDAwMDAwMDAyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk4LjAsMTkyLjApIHNjYWxlKDIuMDQwMDAwMDAwMDAwMDAwNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE4IDc4IEMxNiA0MiA0NCAyMCA4MiAyMCBDODQgNTYgNjAgODQgMTggNzh6Ii8+PHBhdGggZD0iTTE4IDc4IEMzOCA1OCA1NCA0NCA3MCAzNCIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjQ2OC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIiBmb250LXNpemU9IjMzIiBmaWxsPSIjZmZmIiBsZXR0ZXItc3BhY2luZz0iNCI+U0tJTkNBUkUgUklUVUFMPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNTAyLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Skincare" loading="lazy" width="800" height="600"><span class="gallery-cap">Skincare</span>
+          </button>
+          <button class="gallery-item reveal" data-full="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgODAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJOYWlsIEFydCAocGxhY2Vob2xkZXIgaW1hZ2UpIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmJkZmUzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYjc2ZTc5Ii8+PC9saW5lYXJHcmFkaWVudD4KPHBhdHRlcm4gaWQ9InAiIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjEuNCIgaGVpZ2h0PSIyNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjEwIi8+PC9wYXR0ZXJuPjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgZmlsbD0idXJsKCNwKSIvPjxjaXJjbGUgY3g9IjU4NCIgY3k9Ijc0NiIgcj0iNzkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIzMjciIGN5PSIxODMiIHI9IjEyMyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjYzNCIgY3k9IjM2MiIgcj0iODEiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI0NTAiIGN5PSI1ODYiIHI9IjE2NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjQ5NSIgY3k9IjcxNiIgcj0iMTU4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI2MjkiIGN5PSI2NjEiIHI9IjEwMCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjUzNiIgY3k9IjM2MSIgcj0iNTkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjIyNyIgY3k9IjY4NSIgcj0iMTI4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI3NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIzOTIuMCIgcj0iMTk1Ljg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY0LjAsMjU2LjApIHNjYWxlKDIuNzIpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjM0IiB5PSI0NiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjQwIiByeD0iOCIvPjxyZWN0IHg9IjQyIiB5PSIyMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iMyIvPjxwYXRoIGQ9Ik00MiA1NiBINTgiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI2MjQuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPk5BSUwgQVJUPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNjU4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" data-alt="Nail art" aria-label="View larger: Nail art">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgODAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJOYWlsIEFydCAocGxhY2Vob2xkZXIgaW1hZ2UpIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmJkZmUzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYjc2ZTc5Ii8+PC9saW5lYXJHcmFkaWVudD4KPHBhdHRlcm4gaWQ9InAiIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjEuNCIgaGVpZ2h0PSIyNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjEwIi8+PC9wYXR0ZXJuPjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgZmlsbD0idXJsKCNwKSIvPjxjaXJjbGUgY3g9IjU4NCIgY3k9Ijc0NiIgcj0iNzkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSIzMjciIGN5PSIxODMiIHI9IjEyMyIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4xNSIvPjxjaXJjbGUgY3g9IjYzNCIgY3k9IjM2MiIgcj0iODEiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI0NTAiIGN5PSI1ODYiIHI9IjE2NCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjQ5NSIgY3k9IjcxNiIgcj0iMTU4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI2MjkiIGN5PSI2NjEiIHI9IjEwMCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjUzNiIgY3k9IjM2MSIgcj0iNTkiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjIyNyIgY3k9IjY4NSIgcj0iMTI4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjE1Ii8+CjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9Ijc1NiIgaGVpZ2h0PSI3NTYiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNDAwLjAiIGN5PSIzOTIuMCIgcj0iMTk1Ljg0IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMTYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY0LjAsMjU2LjApIHNjYWxlKDIuNzIpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjM0IiB5PSI0NiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjQwIiByeD0iOCIvPjxyZWN0IHg9IjQyIiB5PSIyMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iMyIvPjxwYXRoIGQ9Ik00MiA1NiBINTgiLz48L2c+Cjx0ZXh0IHg9IjQwMC4wIiB5PSI2MjQuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIzMyIgZmlsbD0iI2ZmZiIgbGV0dGVyLXNwYWNpbmc9IjQiPk5BSUwgQVJUPC90ZXh0Pgo8dGV4dCB4PSI0MDAuMCIgeT0iNjU4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuODUiPlNhbXBsZSBpbWFnZSDCtyByZXBsYWNlIHdpdGggeW91ciBwaG90bzwvdGV4dD4KPC9zdmc+" alt="Nail art" loading="lazy" width="800" height="800"><span class="gallery-cap">Nail Art</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+      <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+      <img src="" alt="" id="lightboxImg">
+      <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">›</button>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+
+    <!-- ============ 7. TESTIMONIALS ============ -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Testimonials</p>
+          <h2 class="section-title reveal">Kind Words from <em>Clients</em></h2>
+          <p class="demo-note reveal">Sample testimonials for demonstration only. These are not real customer reviews.</p>
+        </header>
+
+        <div class="testimonial-grid">
+          <article class="testimonial reveal">
+            <span class="sample-tag">Sample Testimonial</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“The bridal makeup was exactly what I dreamed of. Comfortable, elegant and it lasted all day.”</p>
+            <div class="person"><span class="avatar" aria-hidden="true">A</span><div><strong>Sample Client A</strong><small>Bridal Makeup</small></div></div>
+          </article>
+          <article class="testimonial reveal">
+            <span class="sample-tag">Sample Testimonial</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“A very relaxing facial and a lovely, clean salon. My skin felt fresh and glowing for days.”</p>
+            <div class="person"><span class="avatar" aria-hidden="true">B</span><div><strong>Sample Client B</strong><small>Facial Treatment</small></div></div>
+          </article>
+          <article class="testimonial reveal">
+            <span class="sample-tag">Sample Testimonial</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“Loved my new hair colour! The stylist listened carefully and gave me the perfect look.”</p>
+            <div class="person"><span class="avatar" aria-hidden="true">C</span><div><strong>Sample Client C</strong><small>Hair Coloring</small></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. BOOK AN APPOINTMENT ============ -->
+    <section class="section booking" id="booking">
+      <div class="container booking-grid">
+        <div class="booking-info">
+          <p class="eyebrow reveal">Book an Appointment</p>
+          <h2 class="section-title reveal">Reserve Your <em>Glow</em></h2>
+          <p class="reveal">Fill in the form and send your enquiry on WhatsApp. Our team will reply to confirm your slot.</p>
+          <p class="booking-note reveal"><strong>Please note:</strong> this form sends an <em>enquiry</em> only. Your appointment is confirmed once the salon replies to you.</p>
+          <a href="#" class="btn btn-whatsapp reveal" data-whatsapp-link target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+
+        <form class="booking-form reveal" id="bookingForm" novalidate>
+          <div class="field">
+            <label for="name">Full Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Your full name" required aria-describedby="nameError">
+            <p class="error" id="nameError" role="alert"></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="10-digit mobile number" required aria-describedby="phoneError">
+              <p class="error" id="phoneError" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailError">
+              <p class="error" id="emailError" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="service">Select Service <span class="req" aria-hidden="true">*</span></label>
+            <select id="service" name="service" required aria-describedby="serviceError">
+              <option value="">Choose a service</option>
+              <optgroup label="Services">
+                <option>Hair Styling</option>
+                <option>Hair Coloring</option>
+                <option>Bridal Makeup</option>
+                <option>Party Makeup</option>
+                <option>Facial Treatment</option>
+                <option>Skin Care</option>
+                <option>Manicure</option>
+                <option>Pedicure</option>
+                <option>Waxing</option>
+                <option>Hair Spa</option>
+              </optgroup>
+              <optgroup label="Packages">
+                <option>Bridal Beauty Package</option>
+                <option>Glow Facial Package</option>
+                <option>Hair Care Package</option>
+                <option>Complete Beauty Package</option>
+              </optgroup>
+            </select>
+            <p class="error" id="serviceError" role="alert"></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="date">Preferred Date <span class="req" aria-hidden="true">*</span></label>
+              <input type="date" id="date" name="date" required aria-describedby="dateError">
+              <p class="error" id="dateError" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="time">Preferred Time <span class="req" aria-hidden="true">*</span></label>
+              <input type="time" id="time" name="time" required aria-describedby="timeError">
+              <p class="error" id="timeError" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Additional Message</label>
+            <textarea id="message" name="message" rows="4" maxlength="500" placeholder="Anything we should know? (optional)"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Send Enquiry on WhatsApp</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ 9. CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Contact Us</p>
+          <h2 class="section-title reveal">Visit <em>Our Studio</em></h2>
+          <p class="demo-note reveal">Placeholder details: replace with the real salon information.</p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <ul class="contact-list">
+              <li><span class="c-icon" aria-hidden="true">☎</span><div><strong>Phone</strong><a href="tel:+919999999999" data-phone-link>+91 99999 99999</a></div></li>
+              <li><span class="c-icon" aria-hidden="true">✉</span><div><strong>Email</strong><a href="mailto:hello@glowandgrace.example" data-email-link>hello@glowandgrace.example</a></div></li>
+              <li><span class="c-icon" aria-hidden="true">⌖</span><div><strong>Address</strong><span data-address>123 Sample Street, Your City, State 000000</span></div></li>
+              <li><span class="c-icon" aria-hidden="true">◷</span><div><strong>Opening Hours</strong>
+                <span>Mon – Sat: 10:00 AM – 8:00 PM</span><span>Sunday: 11:00 AM – 6:00 PM</span></div></li>
+            </ul>
+            <div class="contact-buttons">
+              <a href="#" class="btn btn-whatsapp" data-whatsapp-link target="_blank" rel="noopener">WhatsApp Us</a>
+              <a href="https://instagram.com/" class="btn btn-outline" data-instagram-link target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+
+          <!-- Google Maps placeholder: see README to paste a real embed -->
+          <div class="map-box reveal" id="mapBox">
+            <div class="map-placeholder">
+              <span aria-hidden="true">⌖</span>
+              <strong>Google Maps Embed Placeholder</strong>
+              <p>Paste the salon's Google Maps embed link in <code>SITE_CONFIG.mapEmbedUrl</code> inside <code>js/script.js</code>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 10. FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo logo-light" aria-label="Back to top">
+          <svg class="logo-mark" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 9c4 5 4 9 0 13-4-4-4-8 0-13z" fill="currentColor" opacity=".85"/>
+            <path d="M12 24c4-1 7 0 8 5-5 0-8-2-8-5zM28 24c-4-1-7 0-8 5 5 0 8-2 8-5z" fill="currentColor" opacity=".6"/>
+          </svg>
+          <span class="logo-text"><span data-brand-name>Glow & Grace</span><small>Beauty Studio</small></span>
+        </a>
+        <p>Luxury, care and confidence for every client, every visit.</p>
+        <div class="socials" aria-label="Social media">
+          <a href="https://instagram.com/" data-instagram-link target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg>
+          </a>
+          <a href="#" data-whatsapp-link target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-.8-.4-1.6-1.2-2-2l.8-1-1-2-1.8.2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Quick links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#booking">Book Appointment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services" data-service-link="Hair Styling">Hair Styling</a></li>
+          <li><a href="#services" data-service-link="Bridal Makeup">Bridal Makeup</a></li>
+          <li><a href="#services" data-service-link="Facial Treatment">Facial Treatment</a></li>
+          <li><a href="#services" data-service-link="Manicure">Manicure & Pedicure</a></li>
+          <li><a href="#services" data-service-link="Hair Spa">Hair Spa</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="year">2026</span> <span data-brand-name>Glow & Grace</span> Beauty Studio. All rights reserved.</p>
+        <p class="footer-demo">Demo website. Content, prices and testimonials are samples.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp-link target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-.8-.4-1.6-1.2-2-2l.8-1-1-2-1.8.2z"/></svg>
+  </a>
+
+  <script>
+/* =========================================================
+   Glow & Grace Beauty Studio - script.js
+   ---------------------------------------------------------
+   1. SITE_CONFIG  (EDIT THIS for every new client)
+   2. Apply config to the page
+   3. Header, mobile menu & active link
+   4. Scroll-reveal animations
+   5. Service buttons -> preselect in booking form
+   6. Gallery lightbox
+   7. Booking form validation + WhatsApp enquiry
+   ========================================================= */
+
+/* ---------- 1. SITE CONFIG ----------
+   Change the values below to customise the website.
+   phone formats:
+   - whatsappNumber: country code + number, digits only, NO "+" or spaces
+     e.g. India 98765 43210  ->  "919876543210"
+*/
+const SITE_CONFIG = {
+  brandName: "Glow & Grace",
+  whatsappNumber: "919999999999",            // <-- replace with the client's WhatsApp number
+  displayPhone: "+91 99999 99999",           // shown on the contact section
+  email: "hello@glowandgrace.example",
+  address: "123 Sample Street, Your City, State 000000",
+  instagramUrl: "https://instagram.com/",    // <-- client's Instagram profile link
+  // Paste ONLY the src="..." URL from Google Maps > Share > Embed a map. Leave "" to show the placeholder.
+  mapEmbedUrl: ""
+};
+
+document.documentElement.classList.remove("no-js");
+
+/* ---------- 2. APPLY CONFIG ---------- */
+function buildWhatsAppUrl(text) {
+  const base = "https://wa.me/" + SITE_CONFIG.whatsappNumber;
+  return text ? base + "?text=" + encodeURIComponent(text) : base;
+}
+
+(function applyConfig() {
+  document.querySelectorAll("[data-brand-name]").forEach(el => { el.textContent = SITE_CONFIG.brandName; });
+
+  const defaultMsg = "Hello " + SITE_CONFIG.brandName + " Beauty Studio, I would like to enquire about your services.";
+  document.querySelectorAll("[data-whatsapp-link]").forEach(el => { el.href = buildWhatsAppUrl(defaultMsg); });
+
+  document.querySelectorAll("[data-phone-link]").forEach(el => {
+    el.href = "tel:+" + SITE_CONFIG.whatsappNumber;
+    el.textContent = SITE_CONFIG.displayPhone;
+  });
+  document.querySelectorAll("[data-email-link]").forEach(el => {
+    el.href = "mailto:" + SITE_CONFIG.email;
+    el.textContent = SITE_CONFIG.email;
+  });
+  document.querySelectorAll("[data-address]").forEach(el => { el.textContent = SITE_CONFIG.address; });
+  document.querySelectorAll("[data-instagram-link]").forEach(el => { el.href = SITE_CONFIG.instagramUrl; });
+
+  if (SITE_CONFIG.mapEmbedUrl) {
+    const box = document.getElementById("mapBox");
+    if (box) {
+      const frame = document.createElement("iframe");
+      frame.src = SITE_CONFIG.mapEmbedUrl;
+      frame.title = "Salon location on Google Maps";
+      frame.loading = "lazy";
+      frame.referrerPolicy = "no-referrer-when-downgrade";
+      frame.setAttribute("allowfullscreen", "");
+      box.replaceChildren(frame);
+    }
+  }
+
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+})();
+
+/* ---------- 3. HEADER, MOBILE MENU, ACTIVE LINK ---------- */
+(function navigation() {
+  const header = document.getElementById("header");
+  const toggle = document.getElementById("navToggle");
+  const menu = document.getElementById("navMenu");
+  const links = document.querySelectorAll(".nav-link");
+
+  const backdrop = document.createElement("div");
+  backdrop.className = "nav-backdrop";
+  document.body.appendChild(backdrop);
+
+  function setMenu(open) {
+    menu.classList.toggle("open", open);
+    backdrop.classList.toggle("show", open);
+    header.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  toggle.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+  backdrop.addEventListener("click", () => setMenu(false));
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+  window.addEventListener("resize", () => { if (window.innerWidth > 880) setMenu(false); });
+
+  function onScroll() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Highlight the nav link of the section currently in view
+  const sections = Array.from(links)
+    .map(l => document.querySelector(l.getAttribute("href")))
+    .filter(Boolean);
+  if ("IntersectionObserver" in window) {
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + entry.target.id));
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach(s => spy.observe(s));
+  }
+})();
+
+/* ---------- 4. SCROLL-REVEAL ANIMATIONS ---------- */
+(function reveal() {
+  const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(i => i.classList.add("visible"));
+    return;
+  }
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 90 + "ms";
+    io.observe(el);
+  });
+})();
+
+/* ---------- 5. SERVICE BUTTONS -> BOOKING FORM ---------- */
+function selectServiceAndScroll(serviceName) {
+  const select = document.getElementById("service");
+  if (select && serviceName) {
+    const exists = Array.from(select.options).some(o => o.value === serviceName || o.text === serviceName);
+    if (exists) {
+      select.value = serviceName;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+}
+
+document.querySelectorAll("[data-service]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    selectServiceAndScroll(btn.dataset.service);
+    document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => document.getElementById("name").focus({ preventScroll: true }), 700);
+  });
+});
+
+// Footer service links jump to services and keep the page anchor working
+document.querySelectorAll("[data-service-link]").forEach(a => {
+  a.addEventListener("click", () => selectServiceAndScroll(a.dataset.serviceLink));
+});
+
+/* ---------- 6. GALLERY LIGHTBOX ---------- */
+(function lightbox() {
+  const box = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  const cap = document.getElementById("lightboxCaption");
+  const closeBtn = document.getElementById("lightboxClose");
+  const prevBtn = document.getElementById("lightboxPrev");
+  const nextBtn = document.getElementById("lightboxNext");
+  const items = Array.from(document.querySelectorAll(".gallery-item"));
+  let index = 0;
+  let lastFocus = null;
+
+  function show(i) {
+    index = (i + items.length) % items.length;
+    const it = items[index];
+    img.src = it.dataset.full;
+    img.alt = it.dataset.alt || "";
+    cap.textContent = it.dataset.alt || "";
+  }
+  function open(i) {
+    lastFocus = document.activeElement;
+    show(i);
+    box.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+  function close() {
+    box.hidden = true;
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+
+  items.forEach((it, i) => it.addEventListener("click", () => open(i)));
+  closeBtn.addEventListener("click", close);
+  prevBtn.addEventListener("click", () => show(index - 1));
+  nextBtn.addEventListener("click", () => show(index + 1));
+  box.addEventListener("click", e => { if (e.target === box) close(); });
+  document.addEventListener("keydown", e => {
+    if (box.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(index - 1);
+    if (e.key === "ArrowRight") show(index + 1);
+  });
+})();
+
+/* ---------- 7. BOOKING FORM ---------- */
+(function bookingForm() {
+  const form = document.getElementById("bookingForm");
+  const status = document.getElementById("formStatus");
+  const dateInput = document.getElementById("date");
+
+  // Block past dates in the date picker
+  const today = new Date();
+  today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  const todayStr = today.toISOString().split("T")[0];
+  dateInput.min = todayStr;
+
+  const rules = {
+    name(v) {
+      if (!v.trim()) return "Please enter your name.";
+      if (v.trim().length < 2) return "Name must be at least 2 characters.";
+      if (!/^[\p{L}\s.'-]+$/u.test(v.trim())) return "Name can only contain letters and spaces.";
+      return "";
+    },
+    phone(v) {
+      const digits = v.replace(/[\s()+-]/g, "");
+      if (!digits) return "Please enter your phone number.";
+      if (!/^\d+$/.test(digits)) return "Phone number can only contain digits.";
+      // Accepts 10-digit Indian mobile numbers, optionally with 91 / 0 prefix
+      const local = digits.replace(/^(91|0)(?=\d{10}$)/, "");
+      if (!/^[6-9]\d{9}$/.test(local)) return "Enter a valid 10-digit mobile number.";
+      return "";
+    },
+    email(v) {
+      if (!v.trim()) return "Please enter your email address.";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())) return "Enter a valid email address.";
+      return "";
+    },
+    service(v) { return v ? "" : "Please choose a service."; },
+    date(v) {
+      if (!v) return "Please choose a preferred date.";
+      if (v < todayStr) return "Please choose today or a future date.";
+      return "";
+    },
+    time(v) { return v ? "" : "Please choose a preferred time."; }
+  };
+
+  function validateField(id) {
+    const input = document.getElementById(id);
+    const msg = rules[id](input.value);
+    const field = input.closest(".field");
+    const err = document.getElementById(id + "Error");
+    err.textContent = msg;
+    field.classList.toggle("invalid", Boolean(msg));
+    input.setAttribute("aria-invalid", msg ? "true" : "false");
+    return !msg;
+  }
+
+  Object.keys(rules).forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener("blur", () => validateField(id));
+    input.addEventListener("input", () => {
+      if (input.closest(".field").classList.contains("invalid")) validateField(id);
+    });
+    input.addEventListener("change", () => validateField(id));
+  });
+
+  function formatDate(str) {
+    const [y, m, d] = str.split("-").map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+  }
+  function formatTime(str) {
+    const [h, m] = str.split(":").map(Number);
+    const suffix = h >= 12 ? "PM" : "AM";
+    return ((h % 12) || 12) + ":" + String(m).padStart(2, "0") + " " + suffix;
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    status.className = "form-status";
+    status.textContent = "";
+
+    const valid = Object.keys(rules).map(validateField).every(Boolean);
+    if (!valid) {
+      const firstBad = form.querySelector(".field.invalid input, .field.invalid select");
+      if (firstBad) firstBad.focus();
+      status.classList.add("fail");
+      status.textContent = "Please fix the highlighted fields and try again.";
+      return;
+    }
+
+    const v = id => document.getElementById(id).value.trim();
+    const message = [
+      "Hello " + SITE_CONFIG.brandName + " Beauty Studio,",
+      "I would like to enquire about an appointment.",
+      "",
+      "Name: " + v("name"),
+      "Phone: " + v("phone"),
+      "Email: " + v("email"),
+      "Service: " + v("service"),
+      "Preferred date: " + formatDate(v("date")),
+      "Preferred time: " + formatTime(v("time")),
+      v("message") ? "Message: " + v("message") : ""
+    ].filter((line, i, arr) => line !== "" || (i > 0 && arr[i - 1] !== "")).join("\n");
+
+    const url = buildWhatsAppUrl(message);
+    const win = window.open(url, "_blank", "noopener");
+
+    status.classList.add("success");
+    status.textContent = win
+      ? "Your enquiry is ready in WhatsApp. Press send there. Your appointment is confirmed only after the salon replies."
+      : "Your browser blocked the pop-up. Please allow pop-ups and press the button again.";
+    if (!win) { status.classList.remove("success"); status.classList.add("fail"); }
+    else { form.reset(); form.querySelectorAll(".invalid").forEach(f => f.classList.remove("invalid")); }
+  });
+})();
+
+</script>
+</body>
+</html>

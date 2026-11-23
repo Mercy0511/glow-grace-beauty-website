@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: change these for every new client -->
+  <title>Glow & Grace Beauty Studio | Luxury Salon, Bridal Makeup & Skincare</title>
+  <meta name="description" content="Glow & Grace Beauty Studio offers hair styling, bridal makeup, facials, skincare, manicure, pedicure and more. Experience luxury, care and confidence. Book your appointment today.">
+  <meta name="theme-color" content="#b76e79">
+  <meta property="og:title" content="Glow & Grace Beauty Studio">
+  <meta property="og:description" content="Experience luxury, care and confidence at our beauty studio.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Safety net: shows a clear message if style.css was not found (e.g. opened from inside a ZIP) -->
+  <script>
+    window.addEventListener("load", function () {
+      var ok = getComputedStyle(document.documentElement).getPropertyValue("--rose-gold").trim();
+      if (!ok) {
+        var b = document.createElement("div");
+        b.setAttribute("style", "position:fixed;z-index:99999;top:0;left:0;right:0;padding:14px 18px;background:#b76e79;color:#fff;font:16px/1.5 Arial,sans-serif;text-align:center");
+        b.textContent = "Styles not loaded. Extract the ZIP first and keep index.html in the same folder as the css, js and images folders. Or open glow-and-grace-standalone.html instead.";
+        document.body.prepend(b);
+      }
+    });
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ 1. NAVIGATION ============ -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Glow and Grace Beauty Studio - Home">
+        <svg class="logo-mark" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 9c4 5 4 9 0 13-4-4-4-8 0-13z" fill="currentColor" opacity=".85"/>
+          <path d="M12 24c4-1 7 0 8 5-5 0-8-2-8-5zM28 24c-4-1-7 0-8 5 5 0 8-2 8-5z" fill="currentColor" opacity=".6"/>
+        </svg>
+        <span class="logo-text"><span data-brand-name>Glow & Grace</span><small>Beauty Studio</small></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#booking" class="btn btn-primary nav-cta">Book Appointment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 2. HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-bg" role="img" aria-label="Elegant beauty salon"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-grid">
+      <div class="hero-content">
+        <p class="eyebrow reveal">Welcome to Glow & Grace Beauty Studio</p>
+        <h1 class="reveal">Discover Your <em>Natural Beauty</em></h1>
+        <p class="hero-sub reveal">Experience Luxury, Care & Confidence</p>
+        <p class="hero-text reveal">A calm, elegant space where skilled stylists and beauty experts bring out the best in you, from everyday glow to your most special occasions.</p>
+        <div class="hero-buttons reveal">
+          <a href="#booking" class="btn btn-primary">Book Your Appointment</a>
+          <a href="#services" class="btn btn-outline-light">Explore Our Services</a>
+        </div>
+        <ul class="hero-stats reveal" aria-label="Studio highlights">
+          <li><strong>10+</strong><span>Beauty Services</span></li>
+          <li><strong>100%</strong><span>Hygiene Focused</span></li>
+          <li><strong>Premium</strong><span>Skin-friendly Products</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="hero-arch"><img src="images/hero-visual.svg" alt="" width="800" height="1000"></div>
+        <span class="chip chip-1">✦ Hair & Makeup</span>
+        <span class="chip chip-2">✦ Skin & Nails</span>
+        <span class="chip chip-3">✦ Bridal Care</span>
+      </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About section"><span></span></a>
+    </section>
+
+    <!-- ============ 3. ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-images reveal">
+          <img src="images/about-1.svg" alt="Glow and Grace salon interior" class="about-img-main" loading="lazy" width="800" height="1000">
+          <img src="images/about-2.svg" alt="Beauty care treatment" class="about-img-small" loading="lazy" width="800" height="800">
+          <div class="about-badge"><strong>Luxury</strong><span>Salon Experience</span></div>
+        </div>
+
+        <div class="about-text">
+          <p class="eyebrow reveal">About Us</p>
+          <h2 class="section-title reveal">Where Beauty Meets <em>Care</em></h2>
+          <p class="reveal">Glow & Grace Beauty Studio is a modern salon created for people who want to look and feel their very best. Our team combines professional training with a warm, personal approach, so every visit feels relaxing and every result feels like you.</p>
+          <p class="reveal"><strong>Our beauty philosophy:</strong> true beauty is about confidence. We enhance your natural features with gentle, skin-friendly products and techniques instead of hiding them.</p>
+          <p class="reveal">From a quick manicure to a complete bridal transformation, we provide professional beauty care in a clean, comfortable and luxurious setting.</p>
+
+          <h3 class="why-title reveal">Why Choose Us</h3>
+          <ul class="why-list">
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Experienced Professionals</strong><p>Trained stylists and beauty experts.</p></div></li>
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Premium Products</strong><p>Quality, skin-friendly products only.</p></div></li>
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Hygiene First</strong><p>Sanitised tools and a spotless space.</p></div></li>
+            <li class="reveal"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Personalised Care</strong><p>Every look is designed around you.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. SERVICES ============ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Our Services</p>
+          <h2 class="section-title reveal">Treatments Made for <em>You</em></h2>
+          <p class="section-sub reveal">Choose from our full range of beauty services.</p>
+          <p class="demo-note reveal">Demo prices: all prices shown are sample prices and can be customised for each salon.</p>
+        </header>
+
+        <div class="cards-grid">
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/hair-styling.svg" alt="Hair styling" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Hair Styling</h3>
+              <p>Cuts, blow-dries and styling designed to suit your face shape and lifestyle.</p>
+              <div class="card-foot"><span class="price">From ₹500</span><button class="link-btn" data-service="Hair Styling">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/hair-coloring.svg" alt="Hair coloring" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Hair Coloring</h3>
+              <p>Global colour, highlights and balayage using gentle, long-lasting formulas.</p>
+              <div class="card-foot"><span class="price">From ₹1,800</span><button class="link-btn" data-service="Hair Coloring">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/bridal-makeup.svg" alt="Bridal makeup" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Bridal Makeup</h3>
+              <p>A flawless, long-lasting bridal look that photographs beautifully.</p>
+              <div class="card-foot"><span class="price">From ₹15,000</span><button class="link-btn" data-service="Bridal Makeup">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/party-makeup.svg" alt="Party makeup" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Party Makeup</h3>
+              <p>Glamorous makeup for parties, functions and special evenings.</p>
+              <div class="card-foot"><span class="price">From ₹3,500</span><button class="link-btn" data-service="Party Makeup">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/facial.svg" alt="Facial treatment" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Facial Treatment</h3>
+              <p>Deep cleansing facials that refresh, hydrate and brighten your skin.</p>
+              <div class="card-foot"><span class="price">From ₹1,200</span><button class="link-btn" data-service="Facial Treatment">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/skin-care.svg" alt="Skin care" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Skin Care</h3>
+              <p>Personalised skin treatments for glow, clarity and healthy skin.</p>
+              <div class="card-foot"><span class="price">From ₹2,000</span><button class="link-btn" data-service="Skin Care">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/manicure.svg" alt="Manicure" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Manicure</h3>
+              <p>Nail shaping, cuticle care and polish for beautiful, healthy hands.</p>
+              <div class="card-foot"><span class="price">From ₹600</span><button class="link-btn" data-service="Manicure">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/pedicure.svg" alt="Pedicure" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Pedicure</h3>
+              <p>A relaxing foot soak, scrub and polish that leaves feet soft and smooth.</p>
+              <div class="card-foot"><span class="price">From ₹800</span><button class="link-btn" data-service="Pedicure">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/waxing.svg" alt="Waxing" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Waxing</h3>
+              <p>Gentle, hygienic waxing for smooth skin with minimal discomfort.</p>
+              <div class="card-foot"><span class="price">From ₹300</span><button class="link-btn" data-service="Waxing">Book this</button></div>
+            </div>
+          </article>
+
+          <article class="card service-card reveal">
+            <div class="card-img"><img src="images/hair-spa.svg" alt="Hair spa" loading="lazy" width="800" height="600"></div>
+            <div class="card-body">
+              <h3>Hair Spa</h3>
+              <p>Deep nourishing treatment that restores shine, softness and strength.</p>
+              <div class="card-foot"><span class="price">From ₹1,500</span><button class="link-btn" data-service="Hair Spa">Book this</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. SPECIAL PACKAGES ============ -->
+    <section class="section packages" id="pricing">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Pricing</p>
+          <h2 class="section-title reveal">Special <em>Packages</em></h2>
+          <p class="section-sub reveal">Save more with our curated beauty bundles.</p>
+          <p class="demo-note reveal">Demo prices: sample package rates for presentation only.</p>
+        </header>
+
+        <div class="packages-grid">
+          <article class="package reveal">
+            <h3>Bridal Beauty Package</h3>
+            <p class="package-price">₹24,999</p>
+            <p class="package-desc">Bridal makeup, hair styling, facial, manicure and pedicure for your big day.</p>
+            <ul>
+              <li>Pre-bridal facial</li>
+              <li>HD bridal makeup</li>
+              <li>Hair styling</li>
+              <li>Manicure & pedicure</li>
+            </ul>
+            <button class="btn btn-outline" data-service="Bridal Beauty Package">Enquire Now</button>
+          </article>
+
+          <article class="package featured reveal">
+            <span class="ribbon">Most Popular</span>
+            <h3>Complete Beauty Package</h3>
+            <p class="package-price">₹6,999</p>
+            <p class="package-desc">A full pamper session from head to toe, ideal for any occasion.</p>
+            <ul>
+              <li>Hair styling or spa</li>
+              <li>Glow facial</li>
+              <li>Manicure & pedicure</li>
+              <li>Party makeup</li>
+            </ul>
+            <button class="btn btn-primary" data-service="Complete Beauty Package">Enquire Now</button>
+          </article>
+
+          <article class="package reveal">
+            <h3>Glow Facial Package</h3>
+            <p class="package-price">₹3,499</p>
+            <p class="package-desc">Three facial sessions to deeply cleanse, hydrate and brighten your skin.</p>
+            <ul>
+              <li>3 facial sessions</li>
+              <li>Skin analysis</li>
+              <li>Deep cleansing</li>
+              <li>Brightening mask</li>
+            </ul>
+            <button class="btn btn-outline" data-service="Glow Facial Package">Enquire Now</button>
+          </article>
+
+          <article class="package reveal">
+            <h3>Hair Care Package</h3>
+            <p class="package-price">₹3,999</p>
+            <p class="package-desc">Restore shine and strength with a spa, trim and styling combination.</p>
+            <ul>
+              <li>Hair spa</li>
+              <li>Trim & cut</li>
+              <li>Blow-dry styling</li>
+              <li>Scalp treatment</li>
+            </ul>
+            <button class="btn btn-outline" data-service="Hair Care Package">Enquire Now</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. GALLERY ============ -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Our Gallery</p>
+          <h2 class="section-title reveal">A Glimpse of <em>Glow & Grace</em></h2>
+          <p class="section-sub reveal">Sample placeholder images: replace with your real salon photos.</p>
+        </header>
+
+        <div class="gallery-grid">
+          <button class="gallery-item tall reveal" data-full="images/gallery-1.svg" data-alt="Salon interior" aria-label="View larger: Salon interior">
+            <img src="images/gallery-1.svg" alt="Salon interior" loading="lazy" width="800" height="1000"><span class="gallery-cap">Salon Interior</span>
+          </button>
+          <button class="gallery-item reveal" data-full="images/gallery-2.svg" data-alt="Makeup transformation" aria-label="View larger: Makeup transformation">
+            <img src="images/gallery-2.svg" alt="Makeup transformation" loading="lazy" width="800" height="600"><span class="gallery-cap">Makeup Transformation</span>
+          </button>
+          <button class="gallery-item reveal" data-full="images/gallery-3.svg" data-alt="Hair styling" aria-label="View larger: Hair styling">
+            <img src="images/gallery-3.svg" alt="Hair styling" loading="lazy" width="800" height="800"><span class="gallery-cap">Hair Styling</span>
+          </button>
+          <button class="gallery-item tall reveal" data-full="images/gallery-4.svg" data-alt="Bridal makeup" aria-label="View larger: Bridal makeup">
+            <img src="images/gallery-4.svg" alt="Bridal makeup" loading="lazy" width="800" height="1000"><span class="gallery-cap">Bridal Makeup</span>
+          </button>
+          <button class="gallery-item reveal" data-full="images/gallery-5.svg" data-alt="Skincare" aria-label="View larger: Skincare">
+            <img src="images/gallery-5.svg" alt="Skincare" loading="lazy" width="800" height="600"><span class="gallery-cap">Skincare</span>
+          </button>
+          <button class="gallery-item reveal" data-full="images/gallery-6.svg" data-alt="Nail art" aria-label="View larger: Nail art">
+            <img src="images/gallery-6.svg" alt="Nail art" loading="lazy" width="800" height="800"><span class="gallery-cap">Nail Art</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+      <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+      <img src="" alt="" id="lightboxImg">
+      <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">›</button>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+
+    <!-- ============ 7. TESTIMONIALS ============ -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Testimonials</p>
+          <h2 class="section-title reveal">Kind Words from <em>Clients</em></h2>
+          <p class="demo-note reveal">Sample testimonials for demonstration only. These are not real customer reviews.</p>
+        </header>
+
+        <div class="testimonial-grid">
+          <article class="testimonial reveal">
+            <span class="sample-tag">Sample Testimonial</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“The bridal makeup was exactly what I dreamed of. Comfortable, elegant and it lasted all day.”</p>
+            <div class="person"><span class="avatar" aria-hidden="true">A</span><div><strong>Sample Client A</strong><small>Bridal Makeup</small></div></div>
+          </article>
+          <article class="testimonial reveal">
+            <span class="sample-tag">Sample Testimonial</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“A very relaxing facial and a lovely, clean salon. My skin felt fresh and glowing for days.”</p>
+            <div class="person"><span class="avatar" aria-hidden="true">B</span><div><strong>Sample Client B</strong><small>Facial Treatment</small></div></div>
+          </article>
+          <article class="testimonial reveal">
+            <span class="sample-tag">Sample Testimonial</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“Loved my new hair colour! The stylist listened carefully and gave me the perfect look.”</p>
+            <div class="person"><span class="avatar" aria-hidden="true">C</span><div><strong>Sample Client C</strong><small>Hair Coloring</small></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. BOOK AN APPOINTMENT ============ -->
+    <section class="section booking" id="booking">
+      <div class="container booking-grid">
+        <div class="booking-info">
+          <p class="eyebrow reveal">Book an Appointment</p>
+          <h2 class="section-title reveal">Reserve Your <em>Glow</em></h2>
+          <p class="reveal">Fill in the form and send your enquiry on WhatsApp. Our team will reply to confirm your slot.</p>
+          <p class="booking-note reveal"><strong>Please note:</strong> this form sends an <em>enquiry</em> only. Your appointment is confirmed once the salon replies to you.</p>
+          <a href="#" class="btn btn-whatsapp reveal" data-whatsapp-link target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+
+        <form class="booking-form reveal" id="bookingForm" novalidate>
+          <div class="field">
+            <label for="name">Full Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Your full name" required aria-describedby="nameError">
+            <p class="error" id="nameError" role="alert"></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="10-digit mobile number" required aria-describedby="phoneError">
+              <p class="error" id="phoneError" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailError">
+              <p class="error" id="emailError" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="service">Select Service <span class="req" aria-hidden="true">*</span></label>
+            <select id="service" name="service" required aria-describedby="serviceError">
+              <option value="">Choose a service</option>
+              <optgroup label="Services">
+                <option>Hair Styling</option>
+                <option>Hair Coloring</option>
+                <option>Bridal Makeup</option>
+                <option>Party Makeup</option>
+                <option>Facial Treatment</option>
+                <option>Skin Care</option>
+                <option>Manicure</option>
+                <option>Pedicure</option>
+                <option>Waxing</option>
+                <option>Hair Spa</option>
+              </optgroup>
+              <optgroup label="Packages">
+                <option>Bridal Beauty Package</option>
+                <option>Glow Facial Package</option>
+                <option>Hair Care Package</option>
+                <option>Complete Beauty Package</option>
+              </optgroup>
+            </select>
+            <p class="error" id="serviceError" role="alert"></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="date">Preferred Date <span class="req" aria-hidden="true">*</span></label>
+              <input type="date" id="date" name="date" required aria-describedby="dateError">
+              <p class="error" id="dateError" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="time">Preferred Time <span class="req" aria-hidden="true">*</span></label>
+              <input type="time" id="time" name="time" required aria-describedby="timeError">
+              <p class="error" id="timeError" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Additional Message</label>
+            <textarea id="message" name="message" rows="4" maxlength="500" placeholder="Anything we should know? (optional)"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Send Enquiry on WhatsApp</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ 9. CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Contact Us</p>
+          <h2 class="section-title reveal">Visit <em>Our Studio</em></h2>
+          <p class="demo-note reveal">Placeholder details: replace with the real salon information.</p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <ul class="contact-list">
+              <li><span class="c-icon" aria-hidden="true">☎</span><div><strong>Phone</strong><a href="tel:+919999999999" data-phone-link>+91 99999 99999</a></div></li>
+              <li><span class="c-icon" aria-hidden="true">✉</span><div><strong>Email</strong><a href="mailto:hello@glowandgrace.example" data-email-link>hello@glowandgrace.example</a></div></li>
+              <li><span class="c-icon" aria-hidden="true">⌖</span><div><strong>Address</strong><span data-address>123 Sample Street, Your City, State 000000</span></div></li>
+              <li><span class="c-icon" aria-hidden="true">◷</span><div><strong>Opening Hours</strong>
+                <span>Mon – Sat: 10:00 AM – 8:00 PM</span><span>Sunday: 11:00 AM – 6:00 PM</span></div></li>
+            </ul>
+            <div class="contact-buttons">
+              <a href="#" class="btn btn-whatsapp" data-whatsapp-link target="_blank" rel="noopener">WhatsApp Us</a>
+              <a href="https://instagram.com/" class="btn btn-outline" data-instagram-link target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+
+          <!-- Google Maps placeholder: see README to paste a real embed -->
+          <div class="map-box reveal" id="mapBox">
+            <div class="map-placeholder">
+              <span aria-hidden="true">⌖</span>
+              <strong>Google Maps Embed Placeholder</strong>
+              <p>Paste the salon's Google Maps embed link in <code>SITE_CONFIG.mapEmbedUrl</code> inside <code>js/script.js</code>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 10. FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo logo-light" aria-label="Back to top">
+          <svg class="logo-mark" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 9c4 5 4 9 0 13-4-4-4-8 0-13z" fill="currentColor" opacity=".85"/>
+            <path d="M12 24c4-1 7 0 8 5-5 0-8-2-8-5zM28 24c-4-1-7 0-8 5 5 0 8-2 8-5z" fill="currentColor" opacity=".6"/>
+          </svg>
+          <span class="logo-text"><span data-brand-name>Glow & Grace</span><small>Beauty Studio</small></span>
+        </a>
+        <p>Luxury, care and confidence for every client, every visit.</p>
+        <div class="socials" aria-label="Social media">
+          <a href="https://instagram.com/" data-instagram-link target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg>
+          </a>
+          <a href="#" data-whatsapp-link target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-.8-.4-1.6-1.2-2-2l.8-1-1-2-1.8.2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Quick links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#booking">Book Appointment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services" data-service-link="Hair Styling">Hair Styling</a></li>
+          <li><a href="#services" data-service-link="Bridal Makeup">Bridal Makeup</a></li>
+          <li><a href="#services" data-service-link="Facial Treatment">Facial Treatment</a></li>
+          <li><a href="#services" data-service-link="Manicure">Manicure & Pedicure</a></li>
+          <li><a href="#services" data-service-link="Hair Spa">Hair Spa</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="year">2026</span> <span data-brand-name>Glow & Grace</span> Beauty Studio. All rights reserved.</p>
+        <p class="footer-demo">Demo website. Content, prices and testimonials are samples.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp-link target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-.8-.4-1.6-1.2-2-2l.8-1-1-2-1.8.2z"/></svg>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

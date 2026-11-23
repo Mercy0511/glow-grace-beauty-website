@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Hair Spa (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5dcd8"/><stop offset="1" stop-color="#bf8179"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#p)"/><circle cx="781" cy="95" r="122" fill="#fff" opacity="0.22"/><circle cx="175" cy="570" r="99" fill="#fff" opacity="0.22"/><circle cx="717" cy="41" r="75" fill="#fff" opacity="0.15"/><circle cx="30" cy="55" r="72" fill="#fff" opacity="0.1"/><circle cx="94" cy="489" r="58" fill="#fff" opacity="0.1"/><circle cx="490" cy="31" r="101" fill="#fff" opacity="0.22"/><circle cx="685" cy="214" r="47" fill="#fff" opacity="0.22"/><circle cx="650" cy="598" r="102" fill="#fff" opacity="0.1"/>
+<rect x="22" y="22" width="756" height="556" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="294.0" r="146.88000000000002" fill="#fff" opacity=".16"/>
+<g transform="translate(298.0,192.0) scale(2.0400000000000005)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 14 C10 40 50 52 30 86"/><path d="M50 14 C30 40 70 52 50 86"/><path d="M70 14 C50 40 90 52 70 86"/></g>
+<text x="400.0" y="468.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">HAIR SPA</text>
+<text x="400.0" y="502.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Bridal Look (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe4e6"/><stop offset="1" stop-color="#c27c86"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="1000" fill="url(#g)"/><rect width="800" height="1000" fill="url(#p)"/><circle cx="192" cy="641" r="169" fill="#fff" opacity="0.22"/><circle cx="543" cy="880" r="166" fill="#fff" opacity="0.22"/><circle cx="38" cy="875" r="121" fill="#fff" opacity="0.1"/><circle cx="637" cy="227" r="148" fill="#fff" opacity="0.22"/><circle cx="663" cy="706" r="92" fill="#fff" opacity="0.22"/><circle cx="512" cy="30" r="68" fill="#fff" opacity="0.15"/><circle cx="738" cy="127" r="56" fill="#fff" opacity="0.1"/><circle cx="264" cy="132" r="85" fill="#fff" opacity="0.1"/>
+<rect x="22" y="22" width="756" height="956" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="456.0" r="195.84" fill="#fff" opacity=".16"/>
+<g transform="translate(264.0,320.0) scale(2.72)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 72 L24 32 L40 52 L50 24 L60 52 L76 32 L82 72 Z"/><path d="M18 82 H82"/><circle cx="24" cy="28" r="3"/><circle cx="50" cy="20" r="3"/><circle cx="76" cy="28" r="3"/></g>
+<text x="400.0" y="712.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">BRIDAL LOOK</text>
+<text x="400.0" y="746.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>

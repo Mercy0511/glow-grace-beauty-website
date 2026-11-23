@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Nail Art (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbdfe3"/><stop offset="1" stop-color="#b76e79"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="800" fill="url(#g)"/><rect width="800" height="800" fill="url(#p)"/><circle cx="584" cy="746" r="79" fill="#fff" opacity="0.15"/><circle cx="327" cy="183" r="123" fill="#fff" opacity="0.15"/><circle cx="634" cy="362" r="81" fill="#fff" opacity="0.15"/><circle cx="450" cy="586" r="164" fill="#fff" opacity="0.22"/><circle cx="495" cy="716" r="158" fill="#fff" opacity="0.1"/><circle cx="629" cy="661" r="100" fill="#fff" opacity="0.22"/><circle cx="536" cy="361" r="59" fill="#fff" opacity="0.1"/><circle cx="227" cy="685" r="128" fill="#fff" opacity="0.15"/>
+<rect x="22" y="22" width="756" height="756" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="392.0" r="195.84" fill="#fff" opacity=".16"/>
+<g transform="translate(264.0,256.0) scale(2.72)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="34" y="46" width="32" height="40" rx="8"/><rect x="42" y="22" width="16" height="24" rx="3"/><path d="M42 56 H58"/></g>
+<text x="400.0" y="624.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">NAIL ART</text>
+<text x="400.0" y="658.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>

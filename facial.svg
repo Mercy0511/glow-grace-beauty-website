@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Facial Treatment (placeholder image)">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9e7dc"/><stop offset="1" stop-color="#d4a190"/></linearGradient>
+<pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="26" fill="#fff" opacity=".10"/></pattern></defs>
+<rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#p)"/><circle cx="151" cy="408" r="59" fill="#fff" opacity="0.15"/><circle cx="513" cy="274" r="83" fill="#fff" opacity="0.1"/><circle cx="309" cy="439" r="91" fill="#fff" opacity="0.22"/><circle cx="351" cy="178" r="91" fill="#fff" opacity="0.1"/><circle cx="89" cy="89" r="107" fill="#fff" opacity="0.1"/><circle cx="467" cy="255" r="43" fill="#fff" opacity="0.22"/><circle cx="702" cy="485" r="121" fill="#fff" opacity="0.1"/><circle cx="404" cy="427" r="114" fill="#fff" opacity="0.22"/>
+<rect x="22" y="22" width="756" height="556" rx="14" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+<circle cx="400.0" cy="294.0" r="146.88000000000002" fill="#fff" opacity=".16"/>
+<g transform="translate(298.0,192.0) scale(2.0400000000000005)" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="48" rx="26" ry="34"/><path d="M38 44 q4 -4 8 0 M54 44 q4 -4 8 0"/><path d="M40 62 q10 10 20 0"/></g>
+<text x="400.0" y="468.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="33" fill="#fff" letter-spacing="4">FACIAL TREATMENT</text>
+<text x="400.0" y="502.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff" fill-opacity=".85">Sample image · replace with your photo</text>
+</svg>
